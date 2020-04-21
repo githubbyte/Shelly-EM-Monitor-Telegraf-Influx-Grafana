@@ -18,4 +18,5 @@ Il materiale occorrente è il seguente:
 Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN 8la stessa della quale fa parte il Raspberry.
 
 2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI 
+
 E' riportato nella figura seguente
