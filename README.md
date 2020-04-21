@@ -3,6 +3,7 @@ Questa guida nasce dall'esperienza di implementazione di un sistema di monitorag
 Questa implementazione è nata e si è evoluta in parallelo a quelle realizzate dagli amici del sito Energeticambiente: 
 - glfp che ha implementato un monitoraggio dell'impianto fotovoltaico analogo con  sensori SDM230
 - raffaelem che ha implementato un monitoraggio di impianto a Pompa di Calore con altri sensori
+
 Entrambi gli amici hanno pubblicato i propri tutorial: 
 - glfp: https://github.com/glfp/SolarEnergyMonitorInfluxGrafanaDocker
 - raffaelem: https://github.com/cassiel74/Grafana-Influx-PDC-monitor 
