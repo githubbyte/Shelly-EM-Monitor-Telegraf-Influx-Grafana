@@ -21,3 +21,6 @@ Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza ist
 2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI 
 
 E' riportato nella figura seguente
+
+![Figura 1]
+https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/shellydef.jpg
