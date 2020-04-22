@@ -95,6 +95,17 @@ Il sowtare necessario per far funzionare il tutto è il seguente:
 
 **- Grafana** : software di grafica che inoltra queries a Influx e visualizza i grafici
 
-**- Docker** : software "contenitore" all'interno del quale vengono caricati Influxdb e Grafana
-                La scelta di far girare Influxdb e Grafana all'interno di Docker è facoltativa. Io l'ho adottata, visto il mio stato di principiante, su consiglio di glfp, mentre raffaelem ha caricato influxdb e grafana direttamente sul raspy. In realtà non saprei dire quale scelta sia migliore. Le installazioni sono equivalenti dal punto di vista dell'utente finale, differenti per gli aspetti di gestione degli archivi. In questa guida non si entrerà in merito a questi aspetti.
-                
+**- Docker** : software "contenitore" all'interno del quale possono essere caricati tutti o parte dei pacchetti di cui sopra. 
+
+Qui si aprono vari scenari:
+
+1. Inserire tutti i pacchetti in Docker : è la scelta fatta da glfp
+
+2. Fare a meno di Docker ed installare i pacchetti singolarmente : è la scelta fatta da raffaelem
+
+3. Inserire alcuni pacchetti fuori Docker ed altri in Docker. E' la scelta più complicata e meno convincente, ma per motivi "storici" miei alla fine è quella in cui mi sono trovato. Io ho Telegraf e Influxdb che girano fuori Docker e Grafana che gira in Docker. Agli effetti pratici però non cambia nulla.
+
+
+**4.1 Installazione INFLUXDB** (fuori Docker)
+
+Ho seguito la guida, fatta molto bene, di Michele Dal Bosco datata 19/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-influxdb-su-raspbian-buster-1-parte/) 
