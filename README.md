@@ -65,26 +65,33 @@ Bene: queste risposte in formato Json sono quelle alla base del nostro monitorag
 
 Le risposte contengono:
 
--Power: Potenza eletrica istantanea (W) positiva se è nel verso K-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
+- Power: Potenza eletrica istantanea (W) positiva se è nel verso K-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
 
--reactive: potenza elettrica reattiva (var) non ha interesse immediato per noi
+- reactive: potenza elettrica reattiva (var) non ha interesse immediato per noi
 
--voltage: valore istantaneo della tensione (V)
+- voltage: valore istantaneo della tensione (V)
 
--is valid: nessun interesse
+- is valid: nessun interesse
 
--Total: Energia (wh) transitata in senso k--> nello strumento. Per la pinza FV è il totale dell'energia prodotta dal momento dell'installazione dello Shelly. Dividendo per 1000 si ottiene il dato in Kwh. Per la Pinza scambio è il totale dell'energia che il vostro impianto ha assorbito dalla rete dal momento dell'installazione dello Shelly
+- total: Energia (wh) transitata in senso K-->L nello strumento. Per la pinza FV è il totale dell'energia prodotta dal momento dell'installazione dello Shelly. Dividendo per 1000 si ottiene il dato in Kwh. Per la Pinza scambio è il totale dell'energia che il vostro impianto ha assorbito dalla rete dal momento dell'installazione dello Shelly
 
--total-returned: Energia (wh) transitata in senso inverso a "total" (cioè L-->K). Nel caso della Pinza FV questo valore è sempre nullo. Nel caso della Pinza scambio questo valore rappresenta il totale dell'energia immessa in rete dal vostro impianto (dividendo per 1000 si hanno i Kwh)
+- total-returned: Energia (wh) transitata in senso inverso a "total" (cioè L-->K). Nel caso della Pinza FV questo valore è sempre nullo. Nel caso della Pinza scambio questo valore rappresenta il totale dell'energia immessa in rete dal vostro impianto (dividendo per 1000 si hanno i Kwh)
 
 
 **4. SOFTWARE**
 Prerequisiti
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
-Io ho installato la versione più recente alla data del 01 aprile 2020:
+Il sistema operativo installato è la versione più recente alla data del 15 marzo 2020:
 
 VERSION="10 (buster)"
 
-Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49), lo indicherò nel seguito IPRASPY
+**Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)**, lo indicherò nel seguito IPRASPY
 
-Il sowtare necessario
+Il sowtare necessario per far funzionare il tutto è il seguente:
+
+**- Telegraf** : pacchetto che legge in continuazione ad intervalli di tempo da noi fissati i dati dallo Shelly e li impacchetta in formato di "timeseries" da passare a Influxdb
+
+**- Influxdb** : gestore di Databases del tipo "timeseries"
+
+**- Grafana** : software di grafica che inoltra queries a Influx e visualizza i grafici
+
