@@ -39,18 +39,18 @@ Seguite le istruzioni dello Shelly-EM.
 Esso si associerà alla rete Wifi di casa e potrete quindi usarlo con l'App Shelly-Cloud.
 
 **L'accortezza da usare è quella di assegnare un indirizzo IP statico allo Shelly.
-Nel mio caso ho assegnato 192.168.1.202.**
+Nel mio caso ho assegnato 192.168.1.202.** (Voi potete scegliere ovviamente un valore a vs piacere, nel seguito indicherò questo indirizzo con la dizione IPSHELLY).
 
 Se la vostra coonfigurazione è andata a buon fine e funzionante avrete sul cellulare l'App Shelly-Cloud funzionante che vi dà le varie potenze ed energie prodotte, immesse ed assorbite dalla vostra casa.
 
 In vista dell'interfaccia con il software di monitoraggio che andremo a fare provate a verificarne il corretto fuzionamento
 aprite una finestra col browser e digitate:
-http://192.168.1.202/emeter/0
+http://IPSHELLY/emeter/0
 
 otterrete la risposta del tipo:
 
 Digitate ora :
-http://192.168.1.202/emeter/1
+http://IPSHELLY/emeter/1
 
 otterrete ancora una risposta del tipo:
 
