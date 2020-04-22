@@ -14,7 +14,9 @@ Lo scopo di questa guida è quello di descrivere sinteticamente le principali fa
 **1.MATERIALE HARDWARE**
 
 Il materiale occorrente è il seguente:
+
 **- Raspberry Pi4 (4GB)**
+
 **- Dispositivo SHELLY-EM** dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
 Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN (la stessa della quale fa parte il Raspberry).
 
@@ -75,7 +77,7 @@ Le risposte contengono:
 -total-returned: Energia (wh) transitata in senso inverso a "total" (cioè L-->K). Nel caso della Pinza FV questo valore è sempre nullo. Nel caso della Pinza scambio questo valore rappresenta il totale dell'energia immessa in rete dal vostro impianto (dividendo per 1000 si hanno i Kwh)
 
 
-**SOFTWARE**
+**4. SOFTWARE**
 Prerequisiti
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
 Io ho installato la versione più recente alla data del 01 aprile 2020:
