@@ -108,4 +108,9 @@ Qui si aprono vari scenari:
 
 **4.1 Installazione INFLUXDB** (fuori Docker)
 
-Ho seguito la guida, fatta molto bene, di Michele Dal Bosco datata 19/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-influxdb-su-raspbian-buster-1-parte/) 
+Ho seguito la guida, fatta molto bene, di Michele Dal Bosco datata 19/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-influxdb-su-raspbian-buster-1-parte/).
+
+Alla fine della procedura troverete Influxdb installato sul Raspy.
+
+**4.2 Installazione TELEGRAF** (fuori Docker)
+
