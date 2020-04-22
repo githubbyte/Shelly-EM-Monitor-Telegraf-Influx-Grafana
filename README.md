@@ -82,7 +82,9 @@ Le risposte contengono:
 Prerequisiti
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
 Io ho installato la versione più recente alla data del 01 aprile 2020:
+
 VERSION="10 (buster)"
+
 Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49), lo indicherò nel seguito IPRASPY
 
 Il sowtare necessario
