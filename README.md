@@ -11,7 +11,7 @@ Entrambi gli amici hanno pubblicato i propri tutorial:
 Il sottoscritto non aveva esperienza diretta nè di Raspberry, nè di Telegraf-Influx-Grafana.
 Lo scopo di questa guida è quello di descrivere sinteticamente le principali fasi dell'implementazione: per gli approfondimenti si rimanderà alle varie guide e tutorial reperibili in rete.
 
-##**1.MATERIALE HARDWARE**##
+**1.MATERIALE HARDWARE**
 
 Il materiale occorrente è il seguente:
 
