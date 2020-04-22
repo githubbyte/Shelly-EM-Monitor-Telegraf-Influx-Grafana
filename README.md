@@ -11,7 +11,7 @@ Entrambi gli amici hanno pubblicato i propri tutorial:
 Il sottoscritto non aveva esperienza diretta nè di Raspberry, nè di Telegraf-Influx-Grafana.
 Lo scopo di questa guida è quello di descrivere sinteticamente le principali fasi dell'implementazione: per gli approfondimenti si rimanderà alle varie guide e tutorial reperibili in rete.
 
-## **1.MATERIALE HARDWARE** ##
+## **1.HARDWARE** ##
 
 Il materiale occorrente è il seguente:
 
@@ -20,7 +20,7 @@ Il materiale occorrente è il seguente:
 **- Dispositivo SHELLY-EM** dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
 Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN (la stessa della quale fa parte il Raspberry).
 
-**2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI** 
+## **2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI** ##
 
 E' riportato nella figura seguente
 
@@ -35,7 +35,7 @@ b) la posizione delle pinze è tale da poter misurare direttamente le potenze ed
 Questa è la configurazione "standard"  delle pinze ed è applicabile se lo schema di montaggio del vs impianto coincide con quello in figura. Esiste un altra configurazione di base degli impianti fotovoltaici nelle quali la linea dall'inverter va direttamente al contatore di scambio anzichè al quadro generale: in questo  caso è necessaria una piccola modifica all'impianto elettrico per riportarsi allo schema di cui sopra.
 
 
-**3. CONFIGURAZIONE DELLO SHELLY-EM** 
+## **3. CONFIGURAZIONE DELLO SHELLY-EM** ##
 
 Seguite le istruzioni dello Shelly-EM.
 
@@ -78,7 +78,7 @@ Le risposte contengono:
 - total-returned: Energia (wh) transitata in senso inverso a "total" (cioè L-->K). Nel caso della Pinza FV questo valore è sempre nullo. Nel caso della Pinza scambio questo valore rappresenta il totale dell'energia immessa in rete dal vostro impianto (dividendo per 1000 si hanno i Kwh)
 
 
-**4. SOFTWARE**
+## **4. SOFTWARE** ##
 Prerequisiti
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
 Il sistema operativo installato è la versione più recente alla data del 15 marzo 2020:
