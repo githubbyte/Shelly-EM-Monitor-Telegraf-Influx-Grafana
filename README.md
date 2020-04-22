@@ -95,3 +95,6 @@ Il sowtare necessario per far funzionare il tutto è il seguente:
 
 **- Grafana** : software di grafica che inoltra queries a Influx e visualizza i grafici
 
+**- Docker** : software "contenitore" all'interno del quale vengono caricati Influxdb e Grafana
+                La scelta di far girare Influxdb e Grafana all'interno di Docker è facoltativa. Io l'ho adottata, visto il mio stato di principiante, su consiglio di glfp, mentre raffaelem ha caricato influxdb e grafana direttamente sul raspy. In realtà non saprei dire quale scelta sia migliore. Le installazioni sono equivalenti dal punto di vista dell'utente finale, differenti per gli aspetti di gestione degli archivi. In questa guida non si entrerà in merito a questi aspetti.
+                
