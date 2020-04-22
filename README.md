@@ -35,7 +35,8 @@ b) la posizione delle pinze è tale da poter misurare direttamente le potenze ed
 Questa è la configurazione "standard"  delle pinze ed è applicabile se lo schema di montaggio del vs impianto coincide con quello in figura. Esiste un altra configurazione di base degli impianti fotovoltaici nelle quali la linea dall'inverter va direttamente al contatore di scambio anzichè al quadro generale: in questo  caso è necessaria una piccola modifica all'impianto elettrico per riportarsi allo schema di cui sopra.
 
 
-**3.1 CONFIGURAZIONE DELLO SHELLY-EM** 
+**3. CONFIGURAZIONE DELLO SHELLY-EM** 
+
 Seguite le istruzioni dello Shelly-EM.
 
 Esso si associerà alla rete Wifi di casa e potrete quindi usarlo con l'App Shelly-Cloud.
