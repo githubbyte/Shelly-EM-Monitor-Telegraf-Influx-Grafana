@@ -11,14 +11,14 @@ Entrambi gli amici hanno pubblicato i propri tutorial:
 Il sottoscritto non aveva esperienza diretta nè di Raspberry, nè di Telegraf-Influx-Grafana.
 Lo scopo di questa guida è quello di descrivere sinteticamente le principali fasi dell'implementazione: per gli approfondimenti si rimanderà alle varie guide e tutorial reperibili in rete.
 
-1.MATERIALE HARDWARE
+**1.MATERIALE HARDWARE**
 
 Il materiale occorrente è il seguente:
 - Raspberry Pi4 (4GB)
 - Dispositivo SHELLY-EM dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
 Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN 8la stessa della quale fa parte il Raspberry.
 
-2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI 
+**2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI** 
 
 E' riportato nella figura seguente
 
