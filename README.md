@@ -14,9 +14,9 @@ Lo scopo di questa guida è quello di descrivere sinteticamente le principali fa
 **1.MATERIALE HARDWARE**
 
 Il materiale occorrente è il seguente:
-- Raspberry Pi4 (4GB)
-- Dispositivo SHELLY-EM dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
-Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN 8la stessa della quale fa parte il Raspberry.
+**- Raspberry Pi4 (4GB)**
+**- Dispositivo SHELLY-EM** dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
+Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN (la stessa della quale fa parte il Raspberry).
 
 **2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI** 
 
@@ -62,7 +62,7 @@ Bene: queste risposte in formato Json sono quelle alla base del nostro monitorag
 
 Le risposte contengono:
 
--Power: Potenza eletrica istantanea (W) positiva se è nel verso k-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
+-Power: Potenza eletrica istantanea (W) positiva se è nel verso K-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
 
 -reactive: potenza elettrica reattiva (var) non ha interesse immediato per noi
 
@@ -75,11 +75,11 @@ Le risposte contengono:
 -total-returned: Energia (wh) transitata in senso inverso a "total" (cioè L-->K). Nel caso della Pinza FV questo valore è sempre nullo. Nel caso della Pinza scambio questo valore rappresenta il totale dell'energia immessa in rete dal vostro impianto (dividendo per 1000 si hanno i Kwh)
 
 
-SOFTWARE**
+**SOFTWARE**
 Prerequisiti
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
 Io ho installato la versione più recente alla data del 01 aprile 2020:
 VERSION="10 (buster)"
-Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)
+Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49), lo indicherò nel seguito IPRASPY
 
 Il sowtare necessario
