@@ -49,21 +49,29 @@ http://IPSHELLY/emeter/0
 
 otterrete la risposta del tipo:
 
+{"power":171.92,"reactive":86.37,"voltage":242.74,"is_valid":true,"total":883778.6,"total_returned":0.0}
+
 Digitate ora :
 http://IPSHELLY/emeter/1
 
 otterrete ancora una risposta del tipo:
 
+{"power":272.48,"reactive":-453.41,"voltage":242.84,"is_valid":true,"total":709044.9,"total_returned":459949.9}
+
 Bene: queste risposte in formato Json sono quelle alla base del nostro monitoraggio e rappresentano le grandezze misurate rispetivamente dalle pinze 1 (Produzione) (per Shelly è la pinza con index=0) e pinza 2 (Scambio) (per Shelly è la pinza con index=1).
 Le risposte contengono:
 -Power: Potenza eletrica istantanea (W) positiva se è nel verso k-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
--Total: Energia transitata 
+-reactive: potenza elettrica reattiva (var) non ha interesse immediato per noi
+-voltage: valore istantaneo della tensione
+-is valid: nessun interesse
+-Total: Energia (wh) transitata in senso k--> nello strumento. Per la pinza FV è il totale dell'energia prodotta dal momento dell'installazione dello Shelly. Dividendo per 1000 si ottiene il dato in Kwh. Per la Pinza scambio è il totale dell'energia che il vostro impianto ha assorbito dalla rete dal momento dell'installazione dello Shelly.
+-total-returned: Energia (wh) transitata in senso inverso a "total" (cioè L-->K). Nel caso della Pinza FV questo valore è sempre nullo. Nel caso della Pinza scambio questo valore rappresenta il totale dell'energia immessa in rete dal vostro impianto (dividendo per 1000 si hanno i Kwh).
 
 SOFTWARE**
 Prerequisiti
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
-Io ho installato la versione più recente:
-
+Io ho installato la versione più recente alla data del 01 aprile 2020:
+VERSION="10 (buster)"
 Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)
 
 Il sowtare necessario
