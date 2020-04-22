@@ -42,13 +42,16 @@ Esso si associerà alla rete Wifi di casa e potrete quindi usarlo con l'App Shel
 Nel mio caso ho assegnato 192.168.1.202.**
 
 Se la vostra coonfigurazione è andata a buon fine e funzionante avrete sul cellulare l'App Shelly-Cloud funzionante che vi dà le varie potenze ed energie prodotte, immesse ed assorbite dalla vostra casa.
+
 In vista dell'interfaccia con il software di monitoraggio che andremo a fare provate a verificarne il corretto fuzionamento
 aprite una finestra col browser e digitate:
 http://192.168.1.202/emeter/0
+
 otterrete la risposta del tipo:
 
 Digitate ora :
 http://192.168.1.202/emeter/1
+
 otterrete ancora una risposta del tipo:
 
 Bene: queste risposte in formato Json sono quelle alla base del nostro monitoraggio e rappresentano le grandezze misurate rispetivamente dalle pinze 1 (Produzione) (per Shelly è la pinza con index=0) e pinza 2 (Scambio) (per Shelly è la pinza con index=1).
