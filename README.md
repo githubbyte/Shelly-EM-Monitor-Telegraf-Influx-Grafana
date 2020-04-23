@@ -143,7 +143,6 @@ Verifica che sia stato creato:
 `SHOW DATABASES`
 
 Risposta attesa:
-
 `name: databases
 name
 ----
