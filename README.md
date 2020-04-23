@@ -117,8 +117,7 @@ Potete seguire anche la guida di raffaelem sopra citata.
 **Prime operazioni con INFLUXDB**
 
 . Entrare in Influx:
-
-'''influx'''
+`influx`
 
 
 **4.2 Installazione TELEGRAF** (fuori Docker)
