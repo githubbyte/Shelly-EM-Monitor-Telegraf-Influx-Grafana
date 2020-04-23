@@ -42,20 +42,20 @@ Seguite le istruzioni dello Shelly-EM.
 Esso si associerà alla rete Wifi di casa e potrete quindi usarlo con l'App Shelly-Cloud.
 
 **L'accortezza da usare è quella di assegnare un indirizzo IP statico allo Shelly.
-Nel mio caso ho assegnato 192.168.1.202.** (Voi potete scegliere ovviamente un valore a vs piacere, nel seguito indicherò questo indirizzo con la dizione IPSHELLY).
+Nel mio caso ho assegnato 192.168.1.202.** (Voi potete scegliere ovviamente un valore a vs piacere, nel seguito indicherò questo indirizzo con la dizione SHELLY_IP).
 
 Se la vostra coonfigurazione è andata a buon fine e funzionante avrete sul cellulare l'App Shelly-Cloud funzionante che vi dà le varie potenze ed energie prodotte, immesse ed assorbite dalla vostra casa.
 
 In vista dell'interfaccia con il software di monitoraggio che andremo a fare provate a verificarne il corretto fuzionamento
 aprite una finestra col browser e digitate:
-http://IPSHELLY/emeter/0
+http://SHELLY_IP/emeter/0
 
 otterrete la risposta del tipo:
 
 {"power":171.92,"reactive":86.37,"voltage":242.74,"is_valid":true,"total":883778.6,"total_returned":0.0}
 
 Digitate ora :
-http://IPSHELLY/emeter/1
+http://SHELLY_IP/emeter/1
 
 otterrete ancora una risposta del tipo:
 
@@ -85,7 +85,7 @@ Il sistema operativo installato è la versione più recente alla data del 15 mar
 
 VERSION="10 (buster)"
 
-**Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)**, lo indicherò nel seguito IPRASPY
+**Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)**, lo indicherò nel seguito con la dizione RASPY_IP
 
 Il sowtare necessario per far funzionare il tutto è il seguente:
 
@@ -112,5 +112,15 @@ Ho seguito la guida, fatta molto bene, di Michele Dal Bosco datata 19/10/2019 ch
 
 Alla fine della procedura troverete Influxdb installato sul Raspy.
 
+Potete seguire anche la guida di raffaelem sopra citata.
+
+
+
+
 **4.2 Installazione TELEGRAF** (fuori Docker)
+
+Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-telegraf-su-raspbian-buster-2-parte/).
+
+La ricapitolo qui di seguito per le parti principali.
+
 
