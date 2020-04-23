@@ -129,6 +129,9 @@ E' del tutto equivalente.
 
 Risposta attesa:
 
+`Connected to http://localhost:8086 version 1.7.10
+InfluxDB shell version: 1.7.10`
+
 
 - Creare il Database che ci servirà in seguito per caricarci le misure dello Shelly (nome a piacere, io ho scelto SHELLYDB):
 
