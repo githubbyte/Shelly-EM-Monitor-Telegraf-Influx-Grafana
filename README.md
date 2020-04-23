@@ -142,6 +142,13 @@ Verifica che sia stato creato:
 
 Risposta attesa:
 
+```
+name: databases
+name
+----
+-internal
+SHELLYDB
+```
 
 
 
