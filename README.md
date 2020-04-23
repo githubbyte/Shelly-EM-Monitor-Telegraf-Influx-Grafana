@@ -129,7 +129,7 @@ E' del tutto equivalente.
 
 Risposta attesa:
 
-Connected to http://localhost:8086 version 1.7.10
+`Connected to http://localhost:8086 version 1.7.10`
 
 InfluxDB shell version: 1.7.10
 
