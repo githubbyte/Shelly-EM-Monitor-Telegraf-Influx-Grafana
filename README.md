@@ -127,7 +127,7 @@ E' del tutto equivalente.
 
 `influx -username 'admin' -password 'XXXX'`
 
-Risposta attesa:
+ Risposta attesa:
 
 `Connected to http://localhost:8086 version 1.7.10
 
