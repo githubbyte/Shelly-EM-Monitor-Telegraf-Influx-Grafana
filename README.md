@@ -127,8 +127,7 @@ E' del tutto equivalente.
 
 `influx -username 'admin' -password 'XXXX'`
 
- Risposta attesa:
-
+Risposta attesa:
 `Connected to http://localhost:8086 version 1.7.10
 
 InfluxDB shell version: 1.7.10`
@@ -142,13 +141,6 @@ Verifica che sia stato creato:
 
 `SHOW DATABASES`
 
-Risposta attesa:
-`name: databases
-name
-----
-_internal
-
-SHELLYDB `
 
 
 **4.2 Installazione TELEGRAF** (fuori Docker)
