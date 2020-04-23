@@ -110,15 +110,25 @@ Qui si aprono vari scenari:
 
 Ho seguito la guida, fatta molto bene, di Michele Dal Bosco datata 19/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-influxdb-su-raspbian-buster-1-parte/).
 
+Attenzione alla parte dell'autenticazione: segnatevi la password che assegnate all'amministratore.
+
+
+
+
+
 Alla fine della procedura troverete Influxdb installato sul Raspy.
 
 Potete seguire anche la guida di raffaelem sopra citata.
+E' del tutto equivalente.
 
 **Prime operazioni con INFLUXDB**
 
 - Entrare in Influx:
 
-`influx`
+`influx -username 'admin' -password 'XXXX'`
+
+Risposta attesa:
+
 
 - Creare il Database che ci servirà in seguito per caricarci le misure dello Shelly (nome a piacere, io ho scelto SHELLYDB):
 
