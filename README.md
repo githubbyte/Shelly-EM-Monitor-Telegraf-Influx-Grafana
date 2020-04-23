@@ -145,7 +145,7 @@ Verifica che sia stato creato:
 
 
 
-## **4.2 Installazione TELEGRAF** ## (fuori Docker)
+## **4.2 Installazione TELEGRAF ## **  (fuori Docker)
 
 Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-telegraf-su-raspbian-buster-2-parte/).
 
