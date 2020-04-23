@@ -144,14 +144,12 @@ Verifica che sia stato creato:
 
 Risposta attesa:
 
-
 `name: databases
 name
 ----
 _internal
 
-SHELLYDB 
-`
+SHELLYDB `
 
 
 **4.2 Installazione TELEGRAF** (fuori Docker)
