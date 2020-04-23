@@ -106,7 +106,7 @@ Qui si aprono vari scenari:
 3. Inserire alcuni pacchetti fuori Docker ed altri in Docker. E' la scelta più complicata e meno convincente, ma per motivi "storici" miei alla fine è quella in cui mi sono trovato. Io ho Telegraf e Influxdb che girano fuori Docker e Grafana che gira in Docker. Agli effetti pratici però non cambia nulla.
 
 
-## **4.1 Installazione INFLUXDB** (fuori Docker)
+## **4.1 Installazione INFLUXDB** ## (fuori Docker)
 
 Ho seguito la guida, fatta molto bene, di Michele Dal Bosco datata 19/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-influxdb-su-raspbian-buster-1-parte/).
 
@@ -145,7 +145,7 @@ Verifica che sia stato creato:
 
 
 
-**4.2 Installazione TELEGRAF** (fuori Docker)
+## **4.2 Installazione TELEGRAF** ## (fuori Docker)
 
 Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-telegraf-su-raspbian-buster-2-parte/).
 
