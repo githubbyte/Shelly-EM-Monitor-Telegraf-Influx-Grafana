@@ -152,6 +152,7 @@ SHELLYDB
 A questo punto non è necessario dare comandi particolari a Influx.
 La creazione delle misure, dei tags e dei fields del database sarà gestita da Telegraf nella fase successiva.
 
+Consiglio di leggere la guida di raffaelem per familiarizzare con le varie clausole di Influx: SELECT,WHERE 
 
 ## 4.2 Installazione TELEGRAF (fuori Docker)
 
