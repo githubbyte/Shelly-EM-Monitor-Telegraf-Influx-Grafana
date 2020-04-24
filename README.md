@@ -36,7 +36,7 @@ Questa è la configurazione "standard"  delle pinze ed è applicabile se lo sche
 
 Esiste un altra configurazione di base degli impianti fotovoltaici nelle quali la linea dall'inverter va direttamente al contatore di scambio anzichè al quadro generale. Lo schema è quello della figura seguente ![Figura 2]( https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/FOTOVOLTAICO_CONF2.jpg)
 
-In questo  caso è necessaria una piccola modifica all'impianto elettrico per riportarsi allo schema di cui sopra, vedi figura seguente:
+In questo  caso è necessaria una piccola modifica all'impianto elettrico per riportarsi allo schema di cui sopra, vedi figura seguente:![figura 3](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/FOTOVOLTAICO_CONF2%20CON%20SHELLY%20(2).jpg)
 
 
 ## **3. CONFIGURAZIONE DELLO SHELLY-EM** ##
