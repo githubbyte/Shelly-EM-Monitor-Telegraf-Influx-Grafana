@@ -236,7 +236,7 @@ Per fortuna Telegraf è molto bene organizzato e non sarà nostro compito dover 
 
 Le informazioni le faremo digerire a telegraf andandole a depositare in due files:
 
-1° File: File di definizione delle variabili d'ambiente di telegraf ("environnement variables") di nome **telegraf** (senza estensione) da creare nella cartella **/etc/telegraf/**
+1° File: File di definizione delle variabili d'ambiente di telegraf ("environnement variables") di nome **telegraf** (senza estensione) da creare nella cartella **/etc/default/**
 
 2° File: File di configurazione di telegraf che troviamo già presente nella cartella **/etc/telegraf/** con nome **telegraf.conf**
 
@@ -247,5 +247,11 @@ Ricapitoliamo i dati di partenza :
 - indirizzo IP dello ShellyEM: **http://xxx.yyy.z.w** (è quello che avete assegnato allo ShellyEM: SHELLY_IP, http://192.168.1.202 nel mio caso)
 - indirizzo IP del Raspberry: **http://xxx.yyy.z.t** (è quello che avete assegnato al Raspberry: RASPY_IP, http://192.168.1.49 nel mio caso)
 - nome del database di Influx su cui andrete a scrivere:**SHELLYDB**  (è quello creato al paragrafo 4.1, se avete scelto un nome diverso scrivete il vostro nome)
+
+Creiamo il file telegraf nella cartella /etc/default/:
+
+URL_PINZA_0=http://http://xxx.yyy.z.w/emeter/0
+URL_PINZA_1=http://http://xxx.yyy.z.w/emeter/1
+DATABASE_NAME=SHELLYDB
 
 
