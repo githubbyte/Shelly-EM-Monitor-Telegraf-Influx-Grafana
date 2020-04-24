@@ -15,7 +15,7 @@ Lo scopo di questa guida è quello di descrivere sinteticamente le principali fa
 
 Il materiale occorrente è il seguente:
 
-**- Raspberry Pi4 (4GB)**
+**- Raspberry Pi4 (4GB)** collegato alla rete di casa (wifi o ethernet) e funzionante h24.
 
 **- Dispositivo SHELLY-EM** dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
 Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN (la stessa della quale fa parte il Raspberry).
@@ -164,5 +164,7 @@ Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019
 
 La ricapitolo qui di seguito per le parti principali.
 
+. installazione:
+```
 sudo apt
 
