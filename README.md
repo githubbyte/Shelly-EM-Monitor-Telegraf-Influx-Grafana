@@ -20,7 +20,7 @@ Il materiale occorrente è il seguente:
 **- Dispositivo SHELLY-EM** dotato di n° 2 pinze amperometriche con portata 50A oppure 120A
 Lo Shelly_EM è un dispositivo domotizzato che permette la misura di potenza istantanea(Watt), Energia (Wh), Tensione (V) transitante su due linee e collegabile via wifi con la propria LAN (la stessa della quale fa parte il Raspberry).
 
-## **2. SCHEMA DI MONTAGGIO DEI DISPOSITIVI** ##
+## **2. MONTAGGIO DELLO SHELLY-EM** ##
 
 E' riportato nella figura seguente
 
