@@ -164,7 +164,7 @@ Per effettuare l'installazione ho seguito  per la parte generale anche in questo
 
 La fase 1 generale è la seguente:
 
-- installazione:
+**4.2.1 installazione**
 prima aggiorniamo
 ```
 sudo apt-get update
@@ -194,4 +194,23 @@ Dovrebbe apparire una risposta del tipo:
 Nel caso non fosse in esecuzione lanciare il comando:
 ```
 sudo systemctl start telegraf
+```
+Telegraf è in esecuzione ma non è ancora operativo e necessita di varie operazioni di configurazione.
+
+**4.2.2 Creazione utente "Telegraf" in ambiente Influxdb**
+La prima operazione da fare è far sì che telegraf possa comunicare con Influxdb (Telegraf dovrà scrivere le metriche sul database).
+Per far questo procediamo ad accreditare un utente di nome "Telegraf" in Influx entrando con la passord XXXX che avevamo creato per l'amministratore admin al punto precedente:
+```
+sudo influx -username 'admin' password 'XXXX'
+```
+quindi:
+```
+> CREATE USER telegraf WITH PASSWORD 'password' WITH ALL PRIVILEGES
+> SHOW USERS
+
+user      admin
+----      -----
+admin     true
+telegraf  true
+> exit
 ```
