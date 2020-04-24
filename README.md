@@ -235,6 +235,8 @@ Nel nostro caso avremo bisogno quindi di :
 Per fortuna Telegraf è molto bene organizzato e non sarà nostro compito dover scrivere nuove istruzioni, dovremo solo attivare delle scelte già predisposte e quindi il lavoro è molto semplice e comprensibile.
 
 Le informazioni le faremo digerire a telegraf andandole a depositare in due files:
-1° File: File di definizione delle variabili d'ambiente di telegraf ("environnement variables") di nome telegraf (senza estensione) da creare nella cartella /etc/telegraf/
-2° File: File di configurazione di telegraf che troviamo già presente nella cartella /etc/telegraf/ con nome telegraf.conf
+
+1° File: File di definizione delle variabili d'ambiente di telegraf ("environnement variables") di nome **telegraf** (senza estensione) da creare nella cartella **/etc/telegraf/**
+
+2° File: File di configurazione di telegraf che troviamo già presente nella cartella **/etc/telegraf/** con nome **telegraf.conf**
 
