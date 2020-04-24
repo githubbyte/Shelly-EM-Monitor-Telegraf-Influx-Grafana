@@ -244,6 +244,8 @@ Le informazioni le faremo digerire a telegraf andandole a depositare in due file
 
 Ricapitoliamo i dati di partenza :
 
-- indirizzo IP dello ShellyEM: http:xxx.yyy.z.w (è quello che avete assegnato allo ShellyEM: SHELLY_IP, http://192.168.1.202 nel mio caso)
-- indirizzo IP del Raspberry: http:xxx.yyy.z.t (è quello che avete assegnato al Raspberry: RASPY_IP, http://192.168.1.49 nel mio caso)
-- nome del database di Influx su cui andrete a scrivere:**SHELLYDB**  (è quello creato al paragrafo 4.1)
+- indirizzo IP dello ShellyEM: **http://xxx.yyy.z.w** (è quello che avete assegnato allo ShellyEM: SHELLY_IP, http://192.168.1.202 nel mio caso)
+- indirizzo IP del Raspberry: **http://xxx.yyy.z.t** (è quello che avete assegnato al Raspberry: RASPY_IP, http://192.168.1.49 nel mio caso)
+- nome del database di Influx su cui andrete a scrivere:**SHELLYDB**  (è quello creato al paragrafo 4.1, se avete scelto un nome diverso scrivete il vostro nome)
+
+
