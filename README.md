@@ -284,4 +284,16 @@ Entriamo in modalità modifica:
 ```
 sudo nano telegraf.conf
 ```
+In modalità modifica si apporteranno le seguenti modifiche:
+
+```
+hostname="raspberrypi"
+database= "${DATABASE_NAME}"
+
+```
+   urls= [
+          "${URL_PINZA_0}","${URL_PINZA_1}" ]
+
+    data_format = "json"
+
 
