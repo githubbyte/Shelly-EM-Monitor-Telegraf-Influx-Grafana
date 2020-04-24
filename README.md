@@ -175,13 +175,12 @@ sudo apt-get install telegraf
 ```
 
 Telegraf dovrebbe essere in esecuzione sul raspberry. 
-Verifichiamolo:
+Verifichiamolo col seguente comando:
 ```
 sudo systemctl status telegraf
 ```
 Dovrebbe apparire una risposta del tipo:
 ```
-pi@raspberrypi:~ $ sudo systemctl status telegraf
 ● telegraf.service - The plugin-driven server agent for reporting metrics into InfluxDB
    Loaded: loaded (/lib/systemd/system/telegraf.service; enabled; vendor preset: enabled)
    Active: active (running) since Sun 2020-04-19 04:59:43 CEST; 5 days ago
@@ -191,4 +190,8 @@ pi@raspberrypi:~ $ sudo systemctl status telegraf
    Memory: 46.0M
    CGroup: /system.slice/telegraf.service
            └─484 /usr/bin/telegraf -config /etc/telegraf/telegraf.conf -config-directory /etc/telegraf/telegraf.d
+```
+Nel caso non fosse in esecuzione lanciare il comando:
+```
+sudo systemctl start telegraf
 ```
