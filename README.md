@@ -164,7 +164,19 @@ Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019
 
 La ricapitolo qui di seguito per le parti principali.
 
-. installazione:
+- installazione:
+prima aggiorniamo
 ```
-sudo apt
+sudo apt-get update
+```
+quindi installiamo tekegraf:
+```
+sudo apt-get install telegraf
+```
+
+Telegraf dovrebbe essere in esecuzione sul raspberry. 
+Verifica:
+```
+sudo systemctl status telegraf
+```
 
