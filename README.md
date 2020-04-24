@@ -158,25 +158,37 @@ La creazione delle misure, dei tags e dei fields del database sarà gestita da T
 
 Consiglio di leggere la guida di raffaelem per familiarizzare con le varie clausole di Influx: SELECT,WHERE 
 
-## 4.2 Installazione TELEGRAF (fuori Docker)
+## 4.2 Installazione TELEGRAF (parte 1 generale)(fuori Docker)
 
-Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-telegraf-su-raspbian-buster-2-parte/).
+Per effettuare l'installazione ho seguito  per la parte generale anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-telegraf-su-raspbian-buster-2-parte/), ma nella parte speciifica di interfacciamento con lo Shelly ho proceduto autonomamente.
 
-La ricapitolo qui di seguito per le parti principali.
+La fase 1 generale è la seguente:
 
 - installazione:
 prima aggiorniamo
 ```
 sudo apt-get update
 ```
-quindi installiamo tekegraf:
+quindi installiamo telegraf:
 ```
 sudo apt-get install telegraf
 ```
 
 Telegraf dovrebbe essere in esecuzione sul raspberry. 
-Verifica:
+Verifichiamolo:
 ```
 sudo systemctl status telegraf
 ```
-
+Dovrebbe apparire una risposta del tipo:
+```
+pi@raspberrypi:~ $ sudo systemctl status telegraf
+● telegraf.service - The plugin-driven server agent for reporting metrics into InfluxDB
+   Loaded: loaded (/lib/systemd/system/telegraf.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2020-04-19 04:59:43 CEST; 5 days ago
+     Docs: https://github.com/influxdata/telegraf
+ Main PID: 484 (telegraf)
+    Tasks: 15 (limit: 4915)
+   Memory: 46.0M
+   CGroup: /system.slice/telegraf.service
+           └─484 /usr/bin/telegraf -config /etc/telegraf/telegraf.conf -config-directory /etc/telegraf/telegraf.d
+```
