@@ -89,7 +89,7 @@ Il sistema operativo installato è la versione più recente alla data del 15 mar
 
 VERSION="10 (buster)"
 
-**Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)**, lo indicherò nel seguito con la dizione RASPY_IP
+**Indirizzo IP del Raspberry statico (nel mio caso 192.168.1.49)**, lo indicherò nel seguito con la dizione IP_RASPY.
 
 Il sowtare necessario per far funzionare il tutto è il seguente:
 
@@ -164,4 +164,5 @@ Ho seguito  anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019
 
 La ricapitolo qui di seguito per le parti principali.
 
+sudo apt
 
