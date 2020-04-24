@@ -219,20 +219,22 @@ telegraf  true
 
 Per chi fosse interessato a capire ed approfondire Telegraf ecco il link alla guida completa: https://github.com/influxdata/telegraf
 
-Prima di passare a configurare telegraf spendo comunque qualche riga per illustrare il funzionamento di telegraf e l'architettura dei suoi files.
+Prima di passare a configurare telegraf spendo comunque qualche riga per illustrarne il funzionamento e l'architettura dei suoi files.
 
 Telegraf è un programma che gira sul Raspy come "service" in background ed in continuazione effettua le seguenti operazioni:
 
-- lettura  ad intervalli di tempo prefissati ( o da noi scelti) da tutte le sorgenti abilitate (i cosiddetti "inputs") delle grandezze più svariate utilizzando i cosiddetti "plugins" di input. Questi plugins sono tutti già presenti in Telegraf e sono numerosissimi, verranno attivati solo quelli scelti dall'utilizzatore
-- elaborazione delle grandezze lette tramite due tipi di procedimenti: processamento ("processor plugins") e/o aggregazione ("aggregator plugins") (questi due procedimenti non ci serviranno e non attiveremo nessun plugins)
-- invio delle grandezze ricevute a varie destinazioni scelte dall'utente ("outputs plugins"). Fra queste destinazioni quella che interessa noi è influxdb su cui andremo a scrivere in n determinato Database che andremo a definire
+- lettura  ad intervalli di tempo prefissati (e da noi scelti) da tutte le sorgenti abilitate (i cosiddetti "inputs") delle grandezze più svariate utilizzando i cosiddetti "plugins" di input. Questi plugins sono tutti già presenti in Telegraf e sono numerosissimi, verranno attivati solo quelli scelti dall'utilizzatore. Nel nostro caso per leggere da Shelly attiveremo il plugin: inputs.http
+- elaborazione delle grandezze lette tramite due tipi di procedimenti: processamento ("processor plugins") e/o aggregazione ("aggregator plugins") che possono filtrare e/o modificare le grandezze lette nello step precedente (questi due procedimenti non ci serviranno e non attiveremo nessun plugins)
+- invio delle grandezze ricevute a varie destinazioni scelte dall'utente ("outputs plugins"). Fra queste destinazioni quella che interessa noi è influxdb su cui andremo a scrivere in un determinato Database che andremo a definire
 
 Nel nostro caso avremo bisogno quindi di :
-- definire i parametri generali di funzionamento di telegraf (intervallo di lettura e scrittura dei dati)
-- definire i parametri del plugin di input (che dovrà leggere da Shelly-EM)
-- definire i parametri del plugin di output (che dovrà scrivere su Influx)
+- definire i parametri generali di funzionamento di telegraf (intervallo di lettura e scrittura dei dati, ammontare dei bytes del buffer di scrittura, etc)
+- definire i parametri del plugin di input (incaricato di leggere da Shelly-EM)
+- definire i parametri del plugin di output (incaricato di scrivere su Influx)
 
-Tutte queste informazioni le faremo digerire a telegraf andandole a depositare in due files:
-1° File: File di definizione delle variabili d'ambiente di telegraf ("envinnement variables) di nome telegraf (senza estensione) da creare nella cartella /etc/telegraf/
+Per fortuna Telegraf è molto bene organizzato e non sarà nostro compito dover scrivere nuove istruzioni, dovremo solo attivare delle scelte già predisposte e quindi il lavoro è molto semplice e comprensibile.
+
+Le informazioni le faremo digerire a telegraf andandole a depositare in due files:
+1° File: File di definizione delle variabili d'ambiente di telegraf ("environnement variables") di nome telegraf (senza estensione) da creare nella cartella /etc/telegraf/
 2° File: File di configurazione di telegraf che troviamo già presente nella cartella /etc/telegraf/ con nome telegraf.conf
 
