@@ -164,8 +164,9 @@ Per effettuare l'installazione ho seguito  per la parte generale anche in questo
 
 La fase 1 generale è la seguente:
 
-**4.2.1 installazione**
-prima aggiorniamo
+**4.2.1 Installazione**
+
+Prima aggiorniamo
 ```
 sudo apt-get update
 ```
@@ -199,13 +200,13 @@ Telegraf è in esecuzione ma non è ancora operativo e necessita di varie operaz
 
 **4.2.2 Creazione utente "Telegraf" in ambiente Influxdb**
 La prima operazione da fare è far sì che telegraf possa comunicare con Influxdb (Telegraf dovrà scrivere le metriche sul database).
-Per far questo procediamo ad accreditare un utente di nome "Telegraf" in Influx entrando con la passord XXXX che avevamo creato per l'amministratore admin al punto precedente:
+Per far questo procediamo ad accreditare un utente di nome "telegraf" in Influx entrando con la passord XXXX che avevamo creato per l'amministratore admin al punto precedente:
 ```
 sudo influx -username 'admin' password 'XXXX'
 ```
-quindi:
+quindi creiamo l'utente telegraf per Influxdb:
 ```
-> CREATE USER telegraf WITH PASSWORD 'password' WITH ALL PRIVILEGES
+> CREATE USER telegraf WITH PASSWORD 'YYYY' WITH ALL PRIVILEGES
 > SHOW USERS
 
 user      admin
