@@ -248,7 +248,7 @@ Ricapitoliamo i dati di partenza :
 - indirizzo IP del Raspberry: **http://xxx.yyy.z.t** (è quello che avete assegnato al Raspberry: RASPY_IP, http://192.168.1.49 nel mio caso)
 - nome del database di Influx su cui andrete a scrivere:**SHELLYDB**  (è quello creato al paragrafo 4.1, se avete scelto un nome diverso scrivete il vostro nome)
 
-Creiamo il file **telegraf**:
+**FILE N° 1 - Creiamo il file **telegraf**:
 
 portiamoci nella cartella /etc/default/ e digitiamo (seguito da invio):
 ```
@@ -275,5 +275,13 @@ Ecco la lista del file:
 URL_PINZA_0=http://http://xxx.yyy.z.w/emeter/0
 URL_PINZA_1=http://http://xxx.yyy.z.w/emeter/1
 DATABASE_NAME=SHELLYDB
+```
+**FILE N° 2 - Configuriamo il file telegraf.conf**:
+
+Portiamoci nella cartella /etc/telgraf/, dovrebbe esserci già presente il file.
+
+Entriamo in modalità modifica:
+```
+sudo nano telegraf.conf
 ```
 
