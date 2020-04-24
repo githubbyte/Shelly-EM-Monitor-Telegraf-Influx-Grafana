@@ -278,8 +278,8 @@ DATABASE_NAME=SHELLYDB
 ```
 **FILE N° 2 - Configuriamo il file telegraf.conf**:
 
-Portiamoci nella cartella /etc/telgraf/, dovrebbe esserci già presente il file.
-
+Portiamoci nella cartella /etc/telegraf/, dovrebbe esserci già presente il file.
+Il file lo 
 Entriamo in modalità modifica:
 ```
 sudo nano telegraf.conf
