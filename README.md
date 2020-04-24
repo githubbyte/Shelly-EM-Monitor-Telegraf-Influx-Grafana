@@ -136,7 +136,7 @@ InfluxDB shell version: 1.7.10
 ```
 
 
-- Creare il Database che ci servirà in seguito per caricarci le misure dello Shelly (nome a piacere, io ho scelto SHELLYDB):
+- Creare il Database che ci servirà in seguito per caricarci le misure dello Shelly (nome a piacere, io ho scelto **SHELLYDB**):
 
 `CREATE SHELLYDB`
 
@@ -215,7 +215,7 @@ admin     true
 telegraf  true
 > exit
 ```
-**4.2.3 Configurazione di Telegraf per renderlo operativo**
+**4.2.3 Alcune note sul funzionamento di Telegraf**
 
 Per chi fosse interessato a capire ed approfondire Telegraf ecco il link alla guida completa: https://github.com/influxdata/telegraf
 
@@ -240,3 +240,10 @@ Le informazioni le faremo digerire a telegraf andandole a depositare in due file
 
 2° File: File di configurazione di telegraf che troviamo già presente nella cartella **/etc/telegraf/** con nome **telegraf.conf**
 
+**4.2.4 Configurazione di Telegraf per renderlo operativo**
+
+Ricapitoliamo i dati di partenza :
+
+- indirizzo IP dello ShellyEM: http:xxx.yyy.z.w (è quello che avete assegnato allo ShellyEM: SHELLY_IP, http://192.168.1.202 nel mio caso)
+- indirizzo IP del Raspberry: http:xxx.yyy.z.t (è quello che avete assegnato al Raspberry: RASPY_IP, http://192.168.1.49 nel mio caso)
+- nome del database di Influx su cui andrete a scrivere:**SHELLYDB**  (è quello creato al paragrafo 4.1)
