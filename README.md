@@ -302,5 +302,9 @@ Facciamo ripartire Telegraf ed influxdb:
 $ sudo systemctl restart influxdb
 $ sudo systemctl restart telegraf
 ```
+Se tutto è andato bene da questo momento il vs database si sta popolando ogni 10 secondi delle letture Shelly...
 
+Verifichiamolo:
+```
+sudo 
 
