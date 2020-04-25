@@ -248,7 +248,7 @@ Ricapitoliamo i dati di partenza :
 - indirizzo IP del Raspberry: **http://xxx.yyy.z.t** (è quello che avete assegnato al Raspberry: RASPY_IP, http://192.168.1.49 nel mio caso)
 - nome del database di Influx su cui andrete a scrivere:**SHELLYDB**  (è quello creato al paragrafo 4.1, se avete scelto un nome diverso scrivete il vostro nome)
 
-**FILE N° 1 - Creiamo il file **telegraf**:
+**FILE N° 1 - Creiamo il file telegraf**:
 
 portiamoci nella cartella /etc/default/ e digitiamo (seguito da invio):
 ```
