@@ -52,15 +52,17 @@ Se la vostra coonfigurazione è andata a buon fine e funzionante avrete sul cell
 
 In vista dell'interfaccia con il software di monitoraggio che andremo a fare provate a verificarne il corretto fuzionamento
 aprite una finestra col browser e digitate:
+```
 http://SHELLY_IP/emeter/0
-
+```
 otterrete la risposta del tipo:
-
+```
 {"power":171.92,"reactive":86.37,"voltage":242.74,"is_valid":true,"total":883778.6,"total_returned":0.0}
-
+```
 Digitate ora :
+```
 http://SHELLY_IP/emeter/1
-
+```
 otterrete ancora una risposta del tipo:
 
 {"power":272.48,"reactive":-453.41,"voltage":242.84,"is_valid":true,"total":709044.9,"total_returned":459949.9}
