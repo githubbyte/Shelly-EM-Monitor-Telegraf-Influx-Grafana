@@ -279,18 +279,24 @@ DATABASE_NAME=SHELLYDB
 **FILE N° 2 - Configuriamo il file telegraf.conf**:
 
 Portiamoci nella cartella /etc/telegraf/, dovrebbe esserci già presente il file.
-Il file che troviamo è la copia di quello ufficiale che troviamo qui https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf ,dove le righe sono numerate
+Il file che troviamo è la copia di quello ufficiale che troviamo qui https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf ,dove le righe sono numerate.
+
 Entriamo in modalità modifica:
 ```
 sudo nano telegraf.conf
 ```
 Con riferimento al numero di riga ecco le modifiche da introdurre (togliendo il # di inizio riga):
+
 riga 94 :   hostname="raspberrypi"
+
 riga 116:   database= "${DATABASE_NAME}"
+
 riga 2778:  "${URL_PINZA_0}","${URL_PINZA_1}"
+
 riga 2815:  data_format = "json"
 
 salvate ed uscite (^X, Y , invio) e telegraf è pronto.
+
 Facciamo ripartire Telegraf ed influxdb:
 ```
 $ sudo systemctl restart influxdb
