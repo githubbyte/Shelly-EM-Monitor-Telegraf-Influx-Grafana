@@ -225,7 +225,7 @@ Prima di passare a configurare telegraf spendo comunque qualche riga per illustr
 
 Telegraf è un programma che gira sul Raspy come "service" in background ed in continuazione effettua le seguenti operazioni:
 
-- lettura  ad intervalli di tempo prefissati (e da noi scelti) da tutte le sorgenti abilitate (i cosiddetti "inputs") delle grandezze più svariate utilizzando i cosiddetti "plugins" di input. Questi plugins sono tutti già presenti in Telegraf e sono numerosissimi, verranno attivati solo quelli scelti dall'utilizzatore. Nel nostro caso per leggere da Shelly attiveremo il plugin: inputs.http
+- lettura  ad intervalli di tempo prefissati (e da noi scelti) da tutte le sorgenti abilitate (i cosiddetti "inputs") di grandezze che possono essere le più svariate (temperature, energie, potenze, etc) utilizzando i cosiddetti "plugins" di input. Questi plugins sono tutti già presenti in Telegraf e sono numerosissimi, verranno attivati solo quelli scelti dall'utilizzatore. Nel nostro caso per leggere da Shelly attiveremo il plugin: inputs.http
 - elaborazione delle grandezze lette tramite due tipi di procedimenti: processamento ("processor plugins") e/o aggregazione ("aggregator plugins") che possono filtrare e/o modificare le grandezze lette nello step precedente (questi due procedimenti non ci serviranno e non attiveremo nessun plugins)
 - invio delle grandezze ricevute a varie destinazioni scelte dall'utente ("outputs plugins"). Fra queste destinazioni quella che interessa noi è influxdb su cui andremo a scrivere in un determinato Database che andremo a definire
 
