@@ -64,9 +64,9 @@ Digitate ora :
 http://SHELLY_IP/emeter/1
 ```
 otterrete ancora una risposta del tipo:
-
+```
 {"power":272.48,"reactive":-453.41,"voltage":242.84,"is_valid":true,"total":709044.9,"total_returned":459949.9}
-
+```
 Bene: queste risposte in formato Json sono quelle alla base del nostro monitoraggio e rappresentano le grandezze misurate rispetivamente dalle pinze 1 (Produzione) (per Shelly è la pinza con index=0) e pinza 2 (Scambio) (per Shelly è la pinza con index=1).
 
 Le risposte contengono:
