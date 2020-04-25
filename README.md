@@ -160,7 +160,7 @@ La creazione delle misure, dei tags e dei fields del database sarà gestita da T
 
 Consiglio di leggere la guida di raffaelem per familiarizzare con le varie clausole di Influx: SELECT,WHERE 
 
-## 4.2 Installazione TELEGRAF (parte 1 generale)(fuori Docker)
+## 4.2 Installazione TELEGRAF (fuori Docker)
 
 Per effettuare l'installazione ho seguito  per la parte generale anche in questo caso la guida di Michele Dal Bosco datata 25/10/2019 che trovate [qui](https://www.uiblog.it/2019/10/configuriamo-tig-telegraf-su-raspbian-buster-2-parte/), ma nella parte speciifica di interfacciamento con lo Shelly ho proceduto autonomamente.
 
@@ -308,5 +308,6 @@ Se tutto è andato bene da questo momento il vs database si sta popolando ogni 1
 
 Verifichiamolo:
 ```
-sudo 
+sudo systemctl status telegraf
 
+```
