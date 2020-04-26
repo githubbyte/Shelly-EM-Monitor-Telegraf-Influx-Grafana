@@ -421,7 +421,7 @@ http://XXXX.YYY.Z.ttt:3000   (indirizzo del vs raspberry)
 
 Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoci a  lsavorare con Grafana.
 
-**Configurazione
+**Configurazione**
 
 1. Attivazione del "DATA SOURCE"
 
