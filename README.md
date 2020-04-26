@@ -503,7 +503,8 @@ QUERY C (CONSUMO) (con l'utilizzo delle subqueries):
 SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
 ```
 
-**VISUALIZZATORE**: PLUGIN MULTIBAR GRAPH PANEL
+**VISUALIZZATORE GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
+
 ===============================================
 
 **DIAGRAMMI GRANDEZZE GIORNALIERE**
@@ -515,6 +516,31 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 - IMMISSIONE: Energia immessa in rete (kwh)
 - AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
 - CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
-- SALDO: Differenza fra Energia
+- SALDO: Differenza fra Prelievo ed Immissione
+
+**QUERIES**
+PRODUZIONE: 
+```
+SELECT difference(last("total")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
+```
+PRELIEVO:
+```
+SELECT difference(last("total")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
+```
+IMMISSIONE:
+```
+SELECT difference(last("total_returned")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
+```
+AUTOCONSUMO
+```
+
+```
+CONSUMO
+```
+```
+SALDO
+```
+```
+**VISUALIZZATORE GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
 
 
