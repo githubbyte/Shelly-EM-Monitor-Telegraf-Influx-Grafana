@@ -314,9 +314,10 @@ sudo systemctl status telegraf
 ## 4.3 ESPLORIAMO IL DATA BASE DELLE MISURE SHELLY
 
 Vediamo  ora di  esplorare il database su cui Telegraf sta continuamente caricando le misure.
+Ecco il log dei primi comandi (righe con > :  comandi, altre righe risposte):
 ```
 influx -username 'admin' -password 'admin'
-show databases
+>SHOW DATABASES
 name: databases
 name
 ----
@@ -324,6 +325,7 @@ _internal
 SHELLYDB
 > 
 USE SHELLYDB
+Using database SHELLYDB
 >  SHOW MEASUREMENTS
 name: measurements
 name
@@ -338,5 +340,29 @@ reactive       float
 total          float
 total_returned float
 voltage        float
-> 
+> SHOW TAG KEYS
+name: http
+tagKey
+------
+host
+url
+> SHOW TAG VALUES WITH KEY = "host"
+name: http
+key  value
+---  -----
+host raspberrypi
+> SHOW TAG VALUES WITH KEY = "url"
+name: http
+key value
+--- -----
+url http://192.168.1.202/emeter/0
+url http://192.168.1.202/emeter/1
+>
 ```
+Da cui vediamo:
+- il "measurement" del nostro Database ha nome http
+- i campi ("field") sono esattamente quelli prodotti dallo Shelly: power,reactive,total,total_returned,voltage e le variabili sono di tipo float
+- il ns database ha due "tag": "hostname" e "url"
+- il tag "hostname" assume il valore unico "raspberrypi"
+- il tag "url" assume due valori "http://192.168.1.202/emeter/0" e "http://192.168.1.202/emeter/1" e questo ci permetterà di selezionare in fase di query i valori misurati dalla Pinza Prod (emeter/0) o quelli misurati dalla Pinza Scambio
+
