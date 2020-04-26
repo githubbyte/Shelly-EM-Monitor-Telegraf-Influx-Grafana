@@ -508,6 +508,8 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 
 **DIAGRAMMI GRANDEZZE GIORNALIERE**
 
+![FIGURA](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/DIAGRAMMI%20GIORNALIERI.png)
+
 - PRODUZIONE: Energia prodotta (kwh)
 - PRELIEVO: Energia prelevata dalla rete (kwh)
 - IMMISSIONE: Energia immessa in rete (kwh)
