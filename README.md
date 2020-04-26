@@ -423,28 +423,31 @@ Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoc
 
 **Configurazione**
 
-1. Attivazione del "DATA SOURCE"
+**1. Attivazione del "DATA SOURCE"
 
 Abbiamo un unico Data Source da attivare: Influxdb
 Vedere figure seguenti.
 
-2. Grafici
+**2. Grafici
 
 I grafici che si possono fare sono innumerevoli, c'è soltanto l'imbarazzo della scelta.
 
 Eccone alcuni:
 
 Le grandezze più interessanti sono:
+
 Grandezze istantanee:
-PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
-PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
-CONSUMO CASA: Assorbimento totale di potenza della casa: Potenza produzione + Prelievo/immissione
-AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
-Grandezze giornaliere:
-PRODUZIONE: Energia prodotta (kwh)
-PRELIEVO: Energia prelevata dalla rete (kwh)
-IMMISSIONE: Energia immessa in rete (kwh)
-AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)
+
+-PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
+
+-PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
+-CONSUMO CASA: Assorbimento totale di potenza della casa: Potenza produzione + Prelievo/immissione
+-AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
+-Grandezze giornaliere:
+-PRODUZIONE: Energia prodotta (kwh)
+-PRELIEVO: Energia prelevata dalla rete (kwh)
+-IMMISSIONE: Energia immessa in rete (kwh)
+-AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)
 CONSUMO: Energia consumata dalla casa (kwh)
 
 
