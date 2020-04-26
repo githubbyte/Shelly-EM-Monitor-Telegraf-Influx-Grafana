@@ -453,6 +453,7 @@ Grandezze giornaliere:
 
 Ecco i grafici:
 
+(https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
 
 
 
