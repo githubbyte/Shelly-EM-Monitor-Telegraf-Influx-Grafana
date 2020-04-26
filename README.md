@@ -468,13 +468,13 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 
 **DIAGRAMMI 2^ RIGA**
 
-1) PERCENTUALE AUTOCONSUMO/PRODUZIONE
+- PERCENTUALE AUTOCONSUMO/PRODUZIONE
 
-2) PERCENTUALE IMISSIONI/PRODUZIONE
+- PERCENTUALE IMISSIONI/PRODUZIONE
 
-3) PERCENTUALE PRELIEVO/CONSUMO CASA
+- PERCENTUALE PRELIEVO/CONSUMO CASA
 
-4) PERCENTUALE AUTOCONSUMO/CONSUMO
+- PERCENTUALE AUTOCONSUMO/CONSUMO
 
 
 **QUERIES**
@@ -519,6 +519,7 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 - SALDO: Differenza fra Prelievo ed Immissione
 
 **QUERIES**
+
 PRODUZIONE: 
 ```
 SELECT difference(last("total")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
