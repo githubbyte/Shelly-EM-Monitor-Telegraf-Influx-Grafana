@@ -8,6 +8,8 @@ Entrambi gli amici hanno pubblicato i propri tutorial:
 - glfp: https://github.com/glfp/SolarEnergyMonitorInfluxGrafanaDocker
 - raffaelem: https://github.com/cassiel74/Grafana-Influx-PDC-monitor 
 
+Rispetto alle configurazioni di glfp e raffaelem, oltre che all'uso di Telegraf di cui non avevano necessità, ho implementato in Grafana un plugin aggiuntivo che presenta  un gauge graficamente più evoluto rispetto a quello standard. 
+
 Il sottoscritto non aveva esperienza diretta nè di Raspberry, nè di Telegraf-Influx-Grafana.
 Lo scopo di questa guida è quello di descrivere sinteticamente le principali fasi dell'implementazione: per gli approfondimenti si rimanderà alle varie guide e tutorial reperibili in rete.
 
