@@ -442,12 +442,14 @@ Grandezze istantanee:
 - PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
 - CONSUMO CASA: Assorbimento totale di potenza della casa: Potenza produzione + Prelievo/immissione
 - AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
-- Grandezze giornaliere:
+
+Grandezze giornaliere:
+
 - PRODUZIONE: Energia prodotta (kwh)
 - PRELIEVO: Energia prelevata dalla rete (kwh)
 - IMMISSIONE: Energia immessa in rete (kwh)
-- AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)
-- CONSUMO: Energia consumata dalla casa (kwh)
+- AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
+- CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
 
 
 
