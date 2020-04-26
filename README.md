@@ -451,6 +451,9 @@ Grandezze giornaliere:
 - AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
 - CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
 
+Ecco i grafici:
+
+
 
 
 
