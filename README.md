@@ -451,7 +451,7 @@ Grandezze giornaliere:
 - AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
 - CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
 
-Ecco i grafici: [grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
+Ecco i grafici: ![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
 
 
 
