@@ -437,18 +437,17 @@ Seguono i più interessanti.
 
 **DIAGRAMMI GRANDEZZE ISTANTANEE**
 
-- PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
-- PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
-- CONSUMO CASA: Assorbimento totale di potenza della casa: Potenza produzione + Prelievo/immissione
-- AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
 
 
 ![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
 
-Essi sono quelli della prima riga ottenuti con il plugin grafico D3 Gauge.
+**DIAGRAMMI PRIMA RIGA**
+- PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
+- PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
+- AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
+- CONSUMO CASA: Assorbimento totale di potenza della casa: Potenza produzione + Prelievo/immissione
 
-Quelli della seconda riga sono in % ottenuti con il plugin grafico Gauge.
-Le queries relative sono le seguenti:
+**QUERIES**
 
 1) PRODUZIONE
 
@@ -462,16 +461,30 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 
 4) CONSUMO
 
+**VISUALIZZATORE**: Plugin grafico D3 Gauge.
 
-DIAGRAMMI 2^ RIGA
 
-1) 
 
+
+**DIAGRAMMI 2^ RIGA**
+
+1) PERCENTUALE AUTOCONSUMO/PRODUZIONE
+
+2) PERCENTUALE IMISSIONI/PRODUZIONE
+
+3) PERCENTUALE PRELIEVO/CONSUMO CASA
+
+4) PERCENTUALE AUTOCONSUMO/CONSUMO
+
+
+**QUERIES**
+
+1)
 2)
-
 3)
-
 4)
+
+
 
 **DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
@@ -489,7 +502,7 @@ QUERY C (CONSUMO) (con l'utilizzo delle subqueries):
 SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
 ```
 
-VISUALIZZAZIONE: PLUGIN MULTIBAR GRAPH PANEL
+**VISUALIZZATORE**: PLUGIN MULTIBAR GRAPH PANEL
 
 
 **DIAGRAMMI GRANDEZZE GIORNALIERE**
