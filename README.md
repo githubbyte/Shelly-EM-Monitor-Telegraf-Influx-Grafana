@@ -484,6 +484,7 @@ DIAGRAMMI 2^ RIGA
 4)
 
 **DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
+![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
 
 QUERY A (Produzione):
 
