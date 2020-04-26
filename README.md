@@ -483,20 +483,22 @@ DIAGRAMMI 2^ RIGA
 
 4)
 
-DIAGRAMMA COMBINATO PRODUZIONE CONSUMO PRELIEVI/IMMISSIONI
+**DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
 
-QUERY A:
+QUERY A (Produzione):
 
 SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
 
-QUERY B:
+QUERY B (PRELIEVI/IMMISSIONI):
 
 SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
 
-QUERY C:
+QUERY C (CONSUMO) (con l'utilizzo delle subqueries):
 
 SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
 
+
+VISUALIZZAZIONE: PLUGIN MULTIBAR GRAPH PANEL
 
 
 
