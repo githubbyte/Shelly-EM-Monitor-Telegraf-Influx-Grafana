@@ -390,6 +390,17 @@ Prima di installare Grafana definiamo i plugins aggiuntivi di Grafana di cui avr
 
 - Plugin per i grafici a barre affiancate: [Grafana Multibar Graph Panel](https://github.com/CorpGlory/grafana-multibar-graph-panel)
 - Plugin per Gauge più evoluto di quello standard di Grafana: [D3 GAUGE di Brian Gann](https://grafana.com/grafana/plugins/briangann-gauge-panel/installation)
-- Plugin (opzionale, usato nella prima fase di sviluppo, poi superato con l'uso di subquery): [GoshPosh Grafana-meta-queries](https://github.com/GoshPosh/grafana-meta-queries)
+- Plugin (opzionale, usato nella prima fase di sviluppo per le operazioni algebriche ed anche condizionali sulle misure, poi superato con l'uso di subquery): [GoshPosh Grafana-meta-queries](https://github.com/GoshPosh/grafana-meta-queries)
 
 Installazione di Grafana:
+
+Con un unico comando si lancia:
+```
+sudo docker run -d -p 3000:3000 --name grafanashelly -e “GF_INSTALL_PLUGINS=goshposh-metaqueries-datasource,https://github.com/CorpGlory/grafana-multibar-graph-panel/archive/master.zip;grafana-multibar-graph-panel,https://grafana.com/api/plugins/briangann-gauge-panel/versions/0.0.6/download;briangann-gauge-panel” grafana/grafana:6.7.0
+```
+da cui si vede:
+- nome assegnato al  contenitore "grafanashelly" (comunemente trovate grafana, ho preferito dare questo nome perchè ho provato varie versioni ed in questo modo mi è più facile memorizzarla) 
+- versione usata di Grafana: 6.7.0
+- porta di lavoro di Grafana 3000
+
+
