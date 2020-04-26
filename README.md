@@ -487,9 +487,10 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 
 
 **DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
+
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
 
-QUERY A (Produzione):
+QUERY A (PRODUZIONE):
 ```
 SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
