@@ -460,7 +460,42 @@ Essi sono quelli della prima riga ottenuti con il plugin grafico D3 Gauge.
 Quelli della seconda riga sono in % ottenuti con il plugin grafico Gauge.
 Le queries relative sono le seguenti:
 
+1) PRODUZIONE
+
+SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(previous)
+
+2) PRELIEVI/IMMISSIONI
+
+SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
+
+3) AUTOCONSUMO
+
+4) CONSUMO
+
+
+DIAGRAMMI 2^ RIGA
+
 1) 
+
+2)
+
+3)
+
+4)
+
+DIAGRAMMA COMBINATO PRODUZIONE CONSUMO PRELIEVI/IMMISSIONI
+
+QUERY A:
+
+SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
+
+QUERY B:
+
+SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
+
+QUERY C:
+
+SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
 
 
 
