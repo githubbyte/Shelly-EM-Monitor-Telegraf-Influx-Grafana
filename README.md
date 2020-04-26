@@ -386,4 +386,6 @@ Fatto: docker è installato ed è in esecuzione...
 
 **Installiamo GRAFANA**
 
+Prima di installare Grafana definiamo i plugins aggiuntivi di Grafana di cui avremo bisogno:
 
+- Plugin per i grafici a barre affiancate: ![Grafana Multibar Graph Panel](https://github.com/CorpGlory/grafana-multibar-graph-panel)
