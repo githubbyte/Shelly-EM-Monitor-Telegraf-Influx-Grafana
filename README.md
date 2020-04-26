@@ -1,4 +1,5 @@
-# Shelly-EM- Energy Monitor con Telegraf-Influx-Grafana. EnergeticAmbiente.
+# Shelly-EM- Energy Monitor con Telegraf-Influx-Grafana. 
+# by Solarbyte (Forum EnergeticAmbiente)
 Questa guida nasce dall'esperienza di implementazione di un sistema di monitoraggio di un impianto fotovoltaico realizzata con un dispositivo Shelly-EM interfacciato con il pacchetto software Telegraf-Influx-Grafana installato su un Raspberry Pi4.
 Questa implementazione è nata e si è evoluta in parallelo a quelle realizzate dagli amici del sito Energeticambiente: 
 - glfp che ha implementato un monitoraggio dell'impianto fotovoltaico analogo con  sensori SDM230
