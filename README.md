@@ -323,8 +323,7 @@ name
 ----
 _internal
 SHELLYDB
-> 
-USE SHELLYDB
+> USE SHELLYDB
 Using database SHELLYDB
 >  SHOW MEASUREMENTS
 name: measurements
@@ -364,5 +363,7 @@ Da cui vediamo:
 - i campi ("field") sono esattamente quelli prodotti dallo Shelly: power,reactive,total,total_returned,voltage e le variabili sono di tipo float
 - il ns database ha due "tag": "hostname" e "url"
 - il tag "hostname" assume il valore unico "raspberrypi"
-- il tag "url" assume due valori "http://192.168.1.202/emeter/0" e "http://192.168.1.202/emeter/1" e questo ci permetterà di selezionare in fase di query i valori misurati dalla Pinza Prod (emeter/0) o quelli misurati dalla Pinza Scambio
+- il tag "url" assume due valori "http://192.168.1.202/emeter/0" e "http://192.168.1.202/emeter/1" e questo ci permetterà di selezionare in fase di query i valori misurati dalla Pinza Prod (emeter/0) o quelli misurati dalla Pinza Scambio (emeter/1). Ricordo che l'indirizzo 192.168.1.202 è quello da me scelto per lo Shelly, voi troverete quello scelto da voi.
+
+
 
