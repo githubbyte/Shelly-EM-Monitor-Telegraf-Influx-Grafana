@@ -451,8 +451,16 @@ Grandezze giornaliere:
 - AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
 - CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
 
-Ecco i grafici: ![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
+Ecco i grafici delle potenze istantanee:
 
+![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
+
+Essi sono quelli della prima riga ottenuti con il plugin grafico D3 Gauge.
+
+Quelli della seconda riga sono in % ottenuti con il plugin grafico Gauge.
+Le queries relative sono le seguenti:
+
+1) 
 
 
 
