@@ -311,3 +311,32 @@ Verifichiamolo:
 sudo systemctl status telegraf
 
 ```
+## 4.3 ESPLORIAMO IL DATA BASE DELLE MISURE SHELLY
+
+Vediamo  ora di  esplorare il database su cui Telegraf sta continuamente caricando le misure.
+```
+influx -username 'admin' -password 'admin'
+show databases
+name: databases
+name
+----
+_internal
+SHELLYDB
+> 
+USE SHELLYDB
+>  SHOW MEASUREMENTS
+name: measurements
+name
+----
+http
+> SHOW FIELD KEYS FROM http
+name: http
+fieldKey       fieldType
+--------       ---------
+power          float
+reactive       float
+total          float
+total_returned float
+voltage        float
+> 
+```
