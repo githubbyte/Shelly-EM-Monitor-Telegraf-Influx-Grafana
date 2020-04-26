@@ -305,8 +305,9 @@ $ sudo systemctl restart influxdb
 $ sudo systemctl restart telegraf
 ```
 Se tutto è andato bene da questo momento il vs database si sta popolando ogni 10 secondi delle letture Shelly...
+La frequenza di 10 sec è quella preimpostata di Telegraf: ho visto che va abbastanza bene. Se volete cambiarla dovete cambiare alla riga n° 28 del file di configurazione il valore di "interval".
 
-Verifichiamolo:
+Verifichiamo se tutto sta funzionando:
 ```
 sudo systemctl status telegraf
 
@@ -365,5 +366,24 @@ Da cui vediamo:
 - il tag "hostname" assume il valore unico "raspberrypi"
 - il tag "url" assume due valori "http://192.168.1.202/emeter/0" e "http://192.168.1.202/emeter/1" e questo ci permetterà di selezionare in fase di query i valori misurati dalla Pinza Prod (emeter/0) o quelli misurati dalla Pinza Scambio (emeter/1). Ricordo che l'indirizzo 192.168.1.202 è quello da me scelto per lo Shelly, voi troverete quello scelto da voi.
 
+Siamo pronti a passare a Grafana...
+
+## 4.4 INSTALLAZIONE DI GRAFANA (su Docker)
+
+**Installiamo Docker**:
+
+- scarichiamo lo script di installazione
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+```
+-lanciamo lo script di installazione:
+```
+sh get-docker.sh
+```
+Aspettiamo qualche minuto che l'installazione sia completata..
+
+Fatto: docker è installato ed è in esecuzione...
+
+**Installiamo GRAFANA**
 
 
