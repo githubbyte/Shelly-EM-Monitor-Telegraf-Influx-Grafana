@@ -485,7 +485,7 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 4)
 
 
-
+==============================================================
 **DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
 
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
@@ -504,7 +504,7 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 ```
 
 **VISUALIZZATORE**: PLUGIN MULTIBAR GRAPH PANEL
-
+===============================================
 
 **DIAGRAMMI GRANDEZZE GIORNALIERE**
 
@@ -515,4 +515,6 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 - IMMISSIONE: Energia immessa in rete (kwh)
 - AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
 - CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
+- SALDO: Differenza fra Energia
+
 
