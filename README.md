@@ -410,6 +410,25 @@ Lanciamo ora grafana:
 sudo docker start grafanashelly
 ```
 Siamo pronti a partire ..
+
 ## 4.5 USO DI GRAFANA
+
+**Collegamento**
+
+Col vs computer da browser:
+http://XXXX.YYY.Z.ttt:3000   (indirizzo del vs raspberry)
+
+Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoci a  lsavorare con Grafana.
+
+**Configurazione
+
+1. Attivazione del "DATA SOURCE"
+
+Abbiamo un unico Data Source da attivare: Influxdb
+
+
+
+
+
 
 
