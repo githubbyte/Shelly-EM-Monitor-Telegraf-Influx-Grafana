@@ -405,4 +405,9 @@ da cui si vede:
 - versione usata di Grafana: 6.7.0
 - porta di lavoro di Grafana 3000
 
-
+Lanciamo ora grafana:
+```
+sudo docker start grafanashelly
+```
+Siamo pronti a partire ..
+**USO DI GRAFANA**
