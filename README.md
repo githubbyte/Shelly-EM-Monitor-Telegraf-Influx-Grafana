@@ -487,17 +487,17 @@ DIAGRAMMI 2^ RIGA
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
 
 QUERY A (Produzione):
-
+```
 SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
-
+```
 QUERY B (PRELIEVI/IMMISSIONI):
-
+```
 SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
-
+```
 QUERY C (CONSUMO) (con l'utilizzo delle subqueries):
-
+```
 SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
-
+```
 
 VISUALIZZAZIONE: PLUGIN MULTIBAR GRAPH PANEL
 
