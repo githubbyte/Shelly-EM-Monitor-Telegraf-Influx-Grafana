@@ -432,26 +432,16 @@ Vedere figure seguenti.
 
 I grafici che si possono fare sono innumerevoli, c'è soltanto l'imbarazzo della scelta.
 
-Eccone alcuni:
+Seguono i più interessanti.
 
-Le grandezze più interessanti sono:
 
-Grandezze istantanee:
+**DIAGRAMMI GRANDEZZE ISTANTANEE**
 
 - PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
 - PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
 - CONSUMO CASA: Assorbimento totale di potenza della casa: Potenza produzione + Prelievo/immissione
 - AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
 
-Grandezze giornaliere:
-
-- PRODUZIONE: Energia prodotta (kwh)
-- PRELIEVO: Energia prelevata dalla rete (kwh)
-- IMMISSIONE: Energia immessa in rete (kwh)
-- AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
-- CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
-
-Ecco i grafici delle potenze istantanee:
 
 ![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
 
@@ -502,5 +492,11 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 VISUALIZZAZIONE: PLUGIN MULTIBAR GRAPH PANEL
 
 
+**DIAGRAMMI GRANDEZZE GIORNALIERE**
 
+- PRODUZIONE: Energia prodotta (kwh)
+- PRELIEVO: Energia prelevata dalla rete (kwh)
+- IMMISSIONE: Energia immessa in rete (kwh)
+- AUTOCONSUMO: Energia consumata dalla casa proveniente dal Fotovoltaico (kwh)=PRODUZIONE-IMMISSIONE
+- CONSUMO: Energia consumata dalla casa (kwh)= PRODUZIONE-IMMISSIONE+PRELIEVO
 
