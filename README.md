@@ -438,7 +438,8 @@ A seguire via via gli altri pannelli...
 Abbiamo un unico Data Source da attivare: Influxdb
 Vedere figure seguenti.
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF1%20DATASOURCE.png)
-
+![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF2%20DATASOURCE.png)
+![figura](
 
 **2. Grafici**
 
