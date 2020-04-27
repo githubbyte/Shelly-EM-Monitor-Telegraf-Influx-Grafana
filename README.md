@@ -464,7 +464,9 @@ Ogni grafico verrà inserito in un "pannello".
 Ogni "pannello si costruisce in 3 steps:
 
 -1 Fomulazione delle query (è la parte più impegnativa)
+
 -2 Scelta del Plugin Grafico (abbastanza semplice:diagramma tipo "gauge",diagramma lineare, diagramma a barre)
+
 -3 Definizione dati generali (intestazione del pannello, semplicissima)
 
 
