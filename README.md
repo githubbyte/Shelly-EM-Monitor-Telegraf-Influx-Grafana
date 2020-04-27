@@ -435,6 +435,12 @@ Per ogni pannello:
 A seguire via via gli altri pannelli...
 
 **1. ATTIVAZIONE DEI "DATA SOURCE"**
+Aprire finestra Configuration:
+
+![fig](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.18.03.png)
+
+e selezionare "Data source" per aggiungerli.
+
 1° Data source: **Influxdb**
 Vedere figure seguenti.
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF1%20DATASOURCE.png)
