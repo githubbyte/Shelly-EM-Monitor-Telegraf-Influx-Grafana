@@ -264,8 +264,8 @@ sudo touch telegraf
 Ora entriamo in modalità edit e digitiamo  sostituendo ai vari xxx.yyy.. etc i nostri indirizzi IP personalizzati (ogni riga seguita da invio):
 ```
 sudo nano telegraf
-URL_PINZA_0=http://http://xxx.yyy.z.w/emeter/0
-URL_PINZA_1=http://http://xxx.yyy.z.w/emeter/1
+URL_PINZA_0=http://xxx.yyy.z.w/emeter/0
+URL_PINZA_1=http://xxx.yyy.z.w/emeter/1
 DATABASE_NAME=SHELLYDB
 ```
 Per uscire:
