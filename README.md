@@ -535,13 +535,21 @@ SELECT difference(last("total_returned")) FROM "http" WHERE ("url" = 'http://192
 ```
 AUTOCONSUMO
 ```
-
+SELECT last("prod")-last("imm") as "autoc" FROM
+(SELECT difference(last("total")) as "prod" FROM  "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')) GROUP BY time(1d)tz('Europe/Rome')
 ```
 CONSUMO
 ```
+SELECT last("prel")+last("prod")-last("imm") as "cons" FROM
+(SELECT difference(last("total")) as "prod" FROM  "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),
+(SELECT difference(last("total")) as "prel" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')) GROUP BY time(1d)tz('Europe/Rome')
 ```
 SALDO
 ```
+SELECT last("prel")-last("imm") as "saldo" FROM
+(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),
+(SELECT difference(last("total")) as "prel" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome'))
+ GROUP BY time(1d)tz('Europe/Rome')
 ```
 **VISUALIZZATORE GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
 
