@@ -51,7 +51,7 @@ Esso si associerà alla rete Wifi di casa e potrete quindi usarlo con l'App Shel
 **L'accortezza da usare è quella di assegnare un indirizzo IP statico allo Shelly.
 Nel mio caso ho assegnato 192.168.1.202.** (Voi potete scegliere ovviamente un valore a vs piacere, nel seguito indicherò questo indirizzo con la dizione SHELLY_IP).
 
-Se la vostra coonfigurazione è andata a buon fine e funzionante avrete sul cellulare l'App Shelly-Cloud funzionante che vi dà le varie potenze ed energie prodotte, immesse ed assorbite dalla vostra casa.
+Se la vostra configurazione è andata a buon fine e funzionante avrete sul cellulare l'App Shelly-Cloud funzionante che vi dà le varie potenze ed energie prodotte, immesse ed assorbite dalla vostra casa.
 
 In vista dell'interfaccia con il software di monitoraggio che andremo a fare provate a verificarne il corretto fuzionamento
 aprite una finestra col browser e digitate:
