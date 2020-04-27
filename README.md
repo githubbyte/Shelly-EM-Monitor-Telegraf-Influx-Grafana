@@ -439,7 +439,7 @@ Abbiamo un unico Data Source da attivare: Influxdb
 Vedere figure seguenti.
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF1%20DATASOURCE.png)
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF2%20DATASOURCE.png)
-![figura](
+![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF3.png)
 
 **2. Grafici**
 
