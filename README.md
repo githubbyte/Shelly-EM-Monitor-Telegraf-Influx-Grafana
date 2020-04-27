@@ -581,4 +581,12 @@ SELECT last("prel")-last("imm") as "saldo" FROM
 
 ==================================================
 
+## **5.CONCLUSIONI** ##
 
+E' stata una bellissima sfida ricca di soddisfazioni: ho imparato moltissime cose partendo da un patrimonio di conoscenze costituito solo da esperienze di programmazione in altri campi..
+
+Spero che questa mia guida sia utile a chi ha uno Shelly-EM e voglia cimentarsi..
+
+Se rilevate errori o imperfezioni segnalatemele sul Forum di EnergeticAmbiente..
+
+Un salutone da Solarbyte ..
