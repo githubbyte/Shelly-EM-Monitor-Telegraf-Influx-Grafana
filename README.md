@@ -461,7 +461,7 @@ I grafici che si possono fare sono innumerevoli, c'è soltanto l'imbarazzo della
 
 Ogni grafico verrà inserito in un "pannello".
 
-Ogni "pannello si costruisce in 3 steps:
+Ogni "pannello" si costruisce in 3 steps:
 
 -1 Fomulazione delle query (è la parte più impegnativa)
 
