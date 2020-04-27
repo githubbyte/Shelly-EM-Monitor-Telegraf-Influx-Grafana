@@ -261,7 +261,7 @@ portiamoci nella cartella /etc/default/ e digitiamo (seguito da invio):
 ```
 sudo touch telegraf
 ```
-Ora entriamo in modalità edit e digitiamo (ogni riga seguita da invio):
+Ora entriamo in modalità edit e digitiamo  sostituendo ai vari xxx.yyy.. etc i nostri indirizzi IP personalizzati (ogni riga seguita da invio):
 ```
 sudo nano telegraf
 URL_PINZA_0=http://http://xxx.yyy.z.w/emeter/0
