@@ -54,7 +54,7 @@ Nel mio caso ho assegnato 192.168.1.202.** (Voi potete scegliere ovviamente un v
 Se la vostra configurazione è andata a buon fine e funzionante avrete sul cellulare l'App Shelly-Cloud funzionante che vi dà le varie potenze ed energie prodotte, immesse ed assorbite dalla vostra casa.
 
 In vista dell'interfaccia con il software di monitoraggio che andremo a fare provate a verificarne il corretto fuzionamento
-aprite una finestra col browser e digitate:
+aprendo una finestra col browser e digitando:
 ```
 http://SHELLY_IP/emeter/0
 ```
