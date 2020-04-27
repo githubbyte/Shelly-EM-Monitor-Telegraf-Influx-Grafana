@@ -88,7 +88,9 @@ Le risposte contengono:
 
 
 ## **4. SOFTWARE** ##
-Prerequisiti
+
+**Prerequisiti**
+
 Raspberry Pi4 configurato e funzionante operativo h24 per poter monitorare le grandezze in continuazione.
 Il sistema operativo installato è la versione più recente alla data del 15 marzo 2020:
 
