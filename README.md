@@ -435,11 +435,12 @@ Per ogni pannello:
 A seguire via via gli altri pannelli...
 
 **1. ATTIVAZIONE DEI "DATA SOURCE"**
+
 Aprire finestra Configuration:
 
 ![fig](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.18.03.png)
 
-e selezionare "Data source" per aggiungerli.
+e selezionare "Data sources" per aggiungerli.
 
 1° Data source: **Influxdb**
 Vedere figure seguenti.
@@ -456,16 +457,23 @@ Vedere figure seguenti
 
 I grafici che si possono fare sono innumerevoli, c'è soltanto l'imbarazzo della scelta.
 
-Seguono i più interessanti.
+Ogni grafico verrà inserito in un "pannello".
+
+Ogni "pannello si costruisce in 3 steps:
+
+-1 Fomulazione delle query (è la parte più impegnativa)
+-2 Scelta del Plugin Grafico (abbastanza semplice:diagramma tipo "gauge",diagramma lineare, diagramma a barre)
+-3 Definizione dati generali (intestazione del pannello, semplicissima)
 
 
-**DIAGRAMMI GRANDEZZE ISTANTANEE**
+Nel seguito i grafici più interessanti. Per ognuno ho indicato le queries ed ho indicato il plugin grafico utilizzato.
 
+
+**PANNELLI GAUGES GRANDEZZE ISTANTANEE**
 
 
 ![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
 
-**DIAGRAMMI PRIMA RIGA**
 - PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
 - PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
 - AUTOCONSUMO: quota di potenza prodotta assorbita dalla casa
@@ -494,7 +502,7 @@ SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as 
 =============================
 
 
-**DIAGRAMMI 2^ RIGA**
+**PANNELLI GRANDEZZE PERCENTUALI**
 
 - PERCENTUALE AUTOCONSUMO/PRODUZIONE
 
@@ -528,7 +536,7 @@ SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as 
 
 ==============================================================
 
-**DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
+**PANNELLO DIAGRAMMA COMBINATO PRODUZIONE PRELIEVI/IMMISSIONI CONSUMO**
 
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
 
@@ -551,7 +559,7 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 
 ==================================================
 
-**DIAGRAMMI GRANDEZZE GIORNALIERE**
+**PANNELLO DIAGRAMMI GRANDEZZE GIORNALIERE**
 
 ![FIGURA](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/DIAGRAMMI%20GIORNALIERI.png)
 
