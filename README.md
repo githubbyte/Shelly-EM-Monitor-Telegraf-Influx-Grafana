@@ -421,7 +421,7 @@ Siamo pronti a partire ..
 Col vs computer da browser:
 http://XXXX.YYY.Z.ttt:3000   (indirizzo del vs raspberry)
 
-Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoci a  lsavorare con Grafana.
+Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoci a  lavorare con Grafana.
 
 **CONFIGURARE**
 
