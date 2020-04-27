@@ -393,7 +393,7 @@ Prima di installare Grafana definiamo i plugins aggiuntivi di Grafana di cui avr
 
 - Plugin per i grafici a barre affiancate: [Grafana Multibar Graph Panel](https://github.com/CorpGlory/grafana-multibar-graph-panel)
 - Plugin per Gauge più evoluto di quello standard di Grafana: [D3 GAUGE di Brian Gann](https://grafana.com/grafana/plugins/briangann-gauge-panel/installation)
-- Plugin per il calcolo dei pannelli con prcentuali: [GoshPosh Grafana-meta-queries](https://github.com/GoshPosh/grafana-meta-queries)
+- Plugin per il calcolo dei pannelli con i gauges percentuali: [GoshPosh Grafana-meta-queries](https://github.com/GoshPosh/grafana-meta-queries)
 
 Installazione di Grafana:
 
@@ -434,13 +434,14 @@ Per ogni pannello:
 
 A seguire via via gli altri pannelli...
 
-**1. ATTIVAZIONE DEL "DATA SOURCE"**
-
-Abbiamo un unico Data Source da attivare: Influxdb
+**1. ATTIVAZIONE DEI "DATA SOURCE"**
+1° Data source: **Influxdb**
 Vedere figure seguenti.
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF1%20DATASOURCE.png)
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF2%20DATASOURCE.png)
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF3.png)
+
+2° Data source: **Metaquery**
 
 **2. GRAFICI**
 
