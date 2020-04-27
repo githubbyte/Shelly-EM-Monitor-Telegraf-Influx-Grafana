@@ -449,19 +449,23 @@ Seguono i più interessanti.
 
 **QUERIES**
 
-1) PRODUZIONE
-
+PRODUZIONE
+```
 SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(previous)
-
-2) PRELIEVI/IMMISSIONI
-
+```
+PRELIEVI/IMMISSIONI
+```
 SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
+```
+AUTOCONSUMO
+```
 
-3) AUTOCONSUMO
+```
+CONSUMO
+```
 
-4) CONSUMO
-
-**VISUALIZZATORE**: Plugin grafico D3 Gauge.
+```
+**PLUGIN GRAFICO**: D3 Gauge.
 
 
 
@@ -479,11 +483,24 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 
 **QUERIES**
 
-1)
-2)
-3)
-4)
+- PERCENTUALE AUTOCONSUMO/PRODUZIONE
+```
 
+```
+
+- PERCENTUALE IMISSIONI/PRODUZIONE
+```
+
+```
+- PERCENTUALE PRELIEVO/CONSUMO CASA
+```
+
+```
+- PERCENTUALE AUTOCONSUMO/CONSUMO
+```
+
+```
+**PLUGIN GRAFICO**: Gauge
 
 ==============================================================
 
