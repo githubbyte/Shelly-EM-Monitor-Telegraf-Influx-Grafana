@@ -279,8 +279,8 @@ cat telegraf
 ```
 Ecco la lista del file:
 ```
-URL_PINZA_0=http://http://xxx.yyy.z.w/emeter/0
-URL_PINZA_1=http://http://xxx.yyy.z.w/emeter/1
+URL_PINZA_0=http://xxx.yyy.z.w/emeter/0
+URL_PINZA_1=http://xxx.yyy.z.w/emeter/1
 DATABASE_NAME=SHELLYDB
 ```
 **FILE N° 2 - Configuriamo il file telegraf.conf**:
