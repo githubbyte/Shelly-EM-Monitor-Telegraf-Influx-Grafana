@@ -439,7 +439,7 @@ Abbiamo un unico Data Source da attivare: Influxdb
 Vedere figure seguenti.
 
 
-**2. Grafici
+**2. Grafici**
 
 I grafici che si possono fare sono innumerevoli, c'è soltanto l'imbarazzo della scelta.
 
