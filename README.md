@@ -504,6 +504,10 @@ SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as 
 
 **PANNELLI GRANDEZZE PERCENTUALI**
 
+![FIG](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CRUSCOTTO%20PERC.png)
+
+
+
 - PERCENTUALE AUTOCONSUMO/PRODUZIONE
 
 - PERCENTUALE IMISSIONI/PRODUZIONE
@@ -515,9 +519,38 @@ SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as 
 
 **QUERIES**
 
-- PERCENTUALE AUTOCONSUMO/PRODUZIONE
-```
+Per questi gauges ho dovuto usare le "Metaqueries" che sono più lente delle queries e subqueries e che quindi possono dare l'impressione di malfunzionamento in quanto non si aggiornano con la stessa velocità delle altre. Basta attendere qualche secondo e comunque si aggiornano senza errori.
 
+L'uso delle Metaqueries permette però l'uso di strutture consizionali che le queries e subqueries non consentono.
+
+Per ogni grafico ottenuto con metaquery occorre procedere in questo modo:
+- creare delle queries Influx che fanno le letture base (solitamente 2  letture:A,B)
+-creare la metaquery che combina con una struttura logico/matematica le due letture precedenti
+
+
+
+
+- PERCENTUALE AUTOCONSUMO/PRODUZIONE
+Query A (INFLUX, disabled): 
+```
+SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
+```
+ALIAS: FV 
+
+
+Query B (INFLUX, disabled): 
+```
+SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
+```
+ALIAS: PRIMM 
+
+QUERY C (METAQUERY):
+
+OUTPUT NAME: AUTOCONS./PROD
+
+EXPRESSION:
+```
+(A['FV']>0)?(((C['PRIMM']>0)?A['FV'] : ( A['FV'] + C['PRIMM'] ))/A['FV']):0
 ```
 
 - PERCENTUALE IMISSIONI/PRODUZIONE
