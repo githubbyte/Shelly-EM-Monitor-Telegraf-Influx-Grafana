@@ -393,7 +393,7 @@ Prima di installare Grafana definiamo i plugins aggiuntivi di Grafana di cui avr
 
 - Plugin per i grafici a barre affiancate: [Grafana Multibar Graph Panel](https://github.com/CorpGlory/grafana-multibar-graph-panel)
 - Plugin per Gauge più evoluto di quello standard di Grafana: [D3 GAUGE di Brian Gann](https://grafana.com/grafana/plugins/briangann-gauge-panel/installation)
-- Plugin (opzionale, usato nella prima fase di sviluppo per le operazioni algebriche ed anche condizionali sulle misure, poi superato con l'uso di subquery): [GoshPosh Grafana-meta-queries](https://github.com/GoshPosh/grafana-meta-queries)
+- Plugin per il calcolo dei pannelli con prcentuali: [GoshPosh Grafana-meta-queries](https://github.com/GoshPosh/grafana-meta-queries)
 
 Installazione di Grafana:
 
