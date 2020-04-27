@@ -553,6 +553,8 @@ SELECT last("prel")-last("imm") as "saldo" FROM
 (SELECT difference(last("total")) as "prel" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome'))
  GROUP BY time(1d)tz('Europe/Rome')
 ```
-**PLUGIN GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
+**PLUGIN GRAFICO**: MULTIBAR GRAPH PANEL
+
+==================================================
 
 
