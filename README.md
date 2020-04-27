@@ -559,6 +559,7 @@ QUERY A E B : come sopra
 
 QUERY C (METAQUERY):
 OUTPUT NAME: IMM/PROD
+
 EXPRESSION:
 ```
 (A['FV']>0)?(1-((B['PRIMM']>0)?A['FV'] : ( A['FV'] + B['PRIMM'] ))/A['FV']):0
@@ -570,6 +571,7 @@ QUERY A E B : come sopra
 
 QUERY C (METAQUERY):
 OUTPUT NAME: PREL/CONS
+
 EXPRESSION:
 ```
 
@@ -580,6 +582,7 @@ QUERY A E B : come sopra
 
 QUERY C (METAQUERY):
 OUTPUT NAME: PREL/CONS
+
 EXPRESSION:
 ```
 ((B['PRIMM']>0)?A['FV'] : ( A['FV'] + B['PRIMM'] )))/(A['FV']+B['PRIMM']
