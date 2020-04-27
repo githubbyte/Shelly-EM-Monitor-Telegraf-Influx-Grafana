@@ -423,10 +423,20 @@ Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoc
 
 **Configurazione**
 
+Gli step da fare sono nell'ordine:
+1) attivare il Data source (nel nostro  caso è uno solo: Influxdb)
+2) creare il primo  pannello
+Per ogni pannello:
+- scrivere le query
+- scegliere il plugin grafico con cui visualizzare le grandezze
+-visualizzare il grafico..
+A seguire via via gli altri pannelli...
+
 **1. Attivazione del "DATA SOURCE"
 
 Abbiamo un unico Data Source da attivare: Influxdb
 Vedere figure seguenti.
+
 
 **2. Grafici
 
