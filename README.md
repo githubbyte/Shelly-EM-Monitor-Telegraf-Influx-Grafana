@@ -472,7 +472,7 @@ Nel seguito i grafici più interessanti. Per ognuno ho indicato le queries ed ho
 **PANNELLI GAUGES GRANDEZZE ISTANTANEE**
 
 
-![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/Schermata%202020-04-26%20alle%2008.14.41.png)
+![grafici istantanei](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CRUSCOTTO%20GAUGES%20ISTANT.png)
 
 - PRODUZIONE: Potenza istantanea della Pinza Produzione (W)
 - PRELIEVO/IMMISSIONE: Potenza istantanea della Pinza Scambio (W) (>0 prelievo, <0 immissione)
