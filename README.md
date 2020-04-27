@@ -525,18 +525,17 @@ L'uso delle Metaqueries permette però l'uso di strutture consizionali che le qu
 
 Per ogni grafico ottenuto con metaquery occorre procedere in questo modo:
 - creare delle queries Influx che fanno le letture base (solitamente 2  letture:A,B)
--creare la metaquery che combina con una struttura logico/matematica le due letture precedenti
+- creare la metaquery che combina con una struttura logico/matematica le due letture precedenti
 
 
 
 
-- PERCENTUALE AUTOCONSUMO/PRODUZIONE
+**- PERCENTUALE AUTOCONSUMO/PRODUZIONE**
 Query A (INFLUX, disabled): 
 ```
 SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
 ALIAS: FV 
-
 
 Query B (INFLUX, disabled): 
 ```
@@ -550,14 +549,27 @@ OUTPUT NAME: AUTOCONS./PROD
 
 EXPRESSION:
 ```
-(A['FV']>0)?(((C['PRIMM']>0)?A['FV'] : ( A['FV'] + C['PRIMM'] ))/A['FV']):0
+(A['FV']>0)?(((B['PRIMM']>0)?A['FV'] : ( A['FV'] + B['PRIMM'] ))/A['FV']):0
 ```
 
-- PERCENTUALE IMISSIONI/PRODUZIONE
+**- PERCENTUALE IMMISSIONI/PRODUZIONE**
+
+QUERY A E B : come sopra
+
+QUERY C (METAQUERY):
+OUTPUT NAME: IMM/PROD
+EXPRESSION:
 ```
+(A['FV']>0)?(1-((B['PRIMM']>0)?A['FV'] : ( A['FV'] + B['PRIMM'] ))/A['FV']):0
 
 ```
-- PERCENTUALE PRELIEVO/CONSUMO CASA
+**- PERCENTUALE PRELIEVO/CONSUMO CASA**
+
+QUERY A E B : come sopra
+
+QUERY C (METAQUERY):
+OUTPUT NAME: PREL/CONS
+EXPRESSION:
 ```
 
 ```
