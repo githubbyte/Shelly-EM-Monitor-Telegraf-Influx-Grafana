@@ -457,13 +457,20 @@ PRELIEVI/IMMISSIONI
 ```
 SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
-AUTOCONSUMO
+AUTOCONSUMO (con utilizzo subqueries)
 ```
-
+SELECT last("prod")+last("imm") as "autoc" FROM 
+(
+SELECT last("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)
+),
+(
+SELECT last("power") as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND ("power"<0) AND $timeFilter GROUP BY time($__interval) fill(null)
+) 
+GROUP BY time($__interval) fill(0)
 ```
-CONSUMO
+CONSUMO (con utiizzo subqueries)
 ```
-
+SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT last("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(null)
 ```
 **PLUGIN GRAFICO**: D3 Gauge.
 
