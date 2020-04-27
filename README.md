@@ -444,7 +444,7 @@ Vedere figure seguenti.
 2° Data source: **Metaquery**
 Vedere figure seguenti
 ![fig_1](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/metaq_01.png)
-![fig_2](
+![fig_2](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/metaq_02.png)
 
 **2. GRAFICI**
 
