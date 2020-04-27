@@ -569,17 +569,6 @@ EXPRESSION:
 (A['FV']>0)?(1-((B['PRIMM']>0)?A['FV'] : ( A['FV'] + B['PRIMM'] ))/A['FV']):0
 
 ```
-**- PERCENTUALE PRELIEVO/CONSUMO CASA**
-
-QUERY A E B : come sopra
-
-QUERY C (METAQUERY):
-OUTPUT NAME: PREL/CONS
-
-EXPRESSION:
-```
-((B['PRIMM']>0)?B['PRIMM'] : 0)/( A['FV'] + B['PRIMM'] )
-```
 **- PERCENTUALE AUTOCONSUMO/CONSUMO**
 
 QUERY A E B : come sopra
@@ -591,6 +580,18 @@ EXPRESSION:
 ```
 ((B['PRIMM']>0)?A['FV'] : ( A['FV'] + B['PRIMM'] )))/(A['FV']+B['PRIMM']
 ```
+**- PERCENTUALE PRELIEVO/CONSUMO CASA**
+
+QUERY A E B : come sopra
+
+QUERY C (METAQUERY):
+OUTPUT NAME: PREL/CONS
+
+EXPRESSION:
+```
+((B['PRIMM']>0)?B['PRIMM'] : 0)/( A['FV'] + B['PRIMM'] )
+```
+
 **PLUGIN GRAFICO**: Gauge
 
 ==============================================================
