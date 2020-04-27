@@ -414,14 +414,14 @@ Siamo pronti a partire ..
 
 ## 4.5 USO DI GRAFANA
 
-**Collegamento**
+**ACCEDERE A INTERFACCIA GRAFANA**
 
 Col vs computer da browser:
 http://XXXX.YYY.Z.ttt:3000   (indirizzo del vs raspberry)
 
 Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoci a  lsavorare con Grafana.
 
-**Configurazione**
+**CONFIGURARE**
 
 Gli step da fare sono nell'ordine:
 1) attivare il Data source (nel nostro  caso è uno solo: Influxdb)
@@ -430,10 +430,11 @@ Gli step da fare sono nell'ordine:
 Per ogni pannello:
 - scrivere le query
 - scegliere il plugin grafico con cui visualizzare le grandezze
--visualizzare il grafico..
+- visualizzare il grafico..
+
 A seguire via via gli altri pannelli...
 
-**1. Attivazione del "DATA SOURCE"**
+**1. ATTIVAZIONE DEL "DATA SOURCE"**
 
 Abbiamo un unico Data Source da attivare: Influxdb
 Vedere figure seguenti.
@@ -441,7 +442,7 @@ Vedere figure seguenti.
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF2%20DATASOURCE.png)
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/CONF3.png)
 
-**2. Grafici**
+**2. GRAFICI**
 
 I grafici che si possono fare sono innumerevoli, c'è soltanto l'imbarazzo della scelta.
 
@@ -462,15 +463,15 @@ Seguono i più interessanti.
 
 **QUERIES**
 
-PRODUZIONE
+- PRODUZIONE
 ```
 SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(previous)
 ```
-PRELIEVI/IMMISSIONI
+- PRELIEVI/IMMISSIONI
 ```
 SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
-AUTOCONSUMO (con utilizzo subqueries)
+- AUTOCONSUMO (con utilizzo subqueries)
 ```
 SELECT last("prod")+last("imm") as "autoc" FROM 
 (
@@ -487,7 +488,7 @@ SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as 
 ```
 **PLUGIN GRAFICO**: D3 Gauge.
 
-
+=============================
 
 
 **DIAGRAMMI 2^ RIGA**
@@ -530,15 +531,15 @@ SELECT last("prod")+last("prel_imm") as "consumo" FROM (SELECT last("power") as 
 
 **QUERIES**
 
-PRODUZIONE:
+- PRODUZIONE:
 ```
 SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
-PRELIEVI/IMMISSIONI:
+- PRELIEVI/IMMISSIONI:
 ```
 SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
-CONSUMO (con l'utilizzo delle subqueries):
+- CONSUMO (con l'utilizzo delle subqueries):
 ```
 SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
 ```
@@ -560,30 +561,30 @@ SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as 
 
 **QUERIES**
 
-PRODUZIONE: 
+- PRODUZIONE: 
 ```
 SELECT difference(last("total")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
 ```
-PRELIEVO:
+- PRELIEVO:
 ```
 SELECT difference(last("total")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
 ```
-IMMISSIONE:
+- IMMISSIONE:
 ```
 SELECT difference(last("total_returned")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
 ```
-AUTOCONSUMO (con utilizzo subqueries):
+- AUTOCONSUMO (con utilizzo subqueries):
 ```
 SELECT last("prod")-last("imm") as "autoc" FROM
 (SELECT difference(last("total")) as "prod" FROM  "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')) GROUP BY time(1d)tz('Europe/Rome')
 ```
-CONSUMO (con utilizzo subqueries):
+- CONSUMO (con utilizzo subqueries):
 ```
 SELECT last("prel")+last("prod")-last("imm") as "cons" FROM
 (SELECT difference(last("total")) as "prod" FROM  "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),
 (SELECT difference(last("total")) as "prel" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')) GROUP BY time(1d)tz('Europe/Rome')
 ```
-SALDO (con utilizzo subqueries):
+- SALDO (con utilizzo subqueries):
 ```
 SELECT last("prel")-last("imm") as "saldo" FROM
 (SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),
