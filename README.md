@@ -426,7 +426,7 @@ Appare l'interfaccia Grafana, accedete con user=admin, passwword=admin  ed eccoc
 **CONFIGURARE**
 
 Gli step da fare sono nell'ordine:
-1) attivare il Data source (nel nostro  caso è uno solo: Influxdb)
+1) attivare il Data source (nel nostro  caso saranno 2: Influxdb e Metaquery)
 2) creare il primo  pannello
 
 Per ogni pannello:
