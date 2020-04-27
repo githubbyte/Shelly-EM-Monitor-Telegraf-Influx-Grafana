@@ -491,22 +491,24 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 
 ![figura](https://github.com/githubbyte/Shelly-EM-Monitor-Telegraf-Influx-Grafana/blob/master/screenshots/COMBINATO.png)
 
-QUERY A (PRODUZIONE):
+**QUERIES**
+
+PRODUZIONE:
 ```
 SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
-QUERY B (PRELIEVI/IMMISSIONI):
+PRELIEVI/IMMISSIONI:
 ```
 SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(linear)
 ```
-QUERY C (CONSUMO) (con l'utilizzo delle subqueries):
+CONSUMO (con l'utilizzo delle subqueries):
 ```
 SELECT mean("prod")+mean("prel_imm") as "consumo" FROM (SELECT mean("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(null)), (SELECT mean("power") as "prel_imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND $timeFilter GROUP BY time($__interval) fill(null)) GROUP BY time($__interval) fill(linear)
 ```
 
-**VISUALIZZATORE GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
+**PLUGIN GRAFICO**: MULTIBAR GRAPH PANEL
 
-===============================================
+==================================================
 
 **DIAGRAMMI GRANDEZZE GIORNALIERE**
 
@@ -533,24 +535,24 @@ IMMISSIONE:
 ```
 SELECT difference(last("total_returned")) FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')
 ```
-AUTOCONSUMO
+AUTOCONSUMO (con utilizzo subqueries):
 ```
 SELECT last("prod")-last("imm") as "autoc" FROM
 (SELECT difference(last("total")) as "prod" FROM  "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')) GROUP BY time(1d)tz('Europe/Rome')
 ```
-CONSUMO
+CONSUMO (con utilizzo subqueries):
 ```
 SELECT last("prel")+last("prod")-last("imm") as "cons" FROM
 (SELECT difference(last("total")) as "prod" FROM  "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),(SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),
 (SELECT difference(last("total")) as "prel" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')) GROUP BY time(1d)tz('Europe/Rome')
 ```
-SALDO
+SALDO (con utilizzo subqueries):
 ```
 SELECT last("prel")-last("imm") as "saldo" FROM
 (SELECT difference(last("total_returned")) as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome')),
 (SELECT difference(last("total")) as "prel" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND (time>=now()-30d)  GROUP BY time(1d) fill(null)tz('Europe/Rome'))
  GROUP BY time(1d)tz('Europe/Rome')
 ```
-**VISUALIZZATORE GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
+**PLUGIN GRAFICO**: PLUGIN MULTIBAR GRAPH PANEL
 
 
