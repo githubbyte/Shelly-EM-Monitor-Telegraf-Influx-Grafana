@@ -495,7 +495,7 @@ SELECT last("power") FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1')
 ```
 - AUTOCONSUMO (con utilizzo subqueries)
 ```
-SELECT last("prod")+last("imm") as "autoc" FROM (SELECT last("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(previous)),(SELECT last("power") as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND ("power"<=0) AND $timeFilter GROUP BY time($__interval) fill(linear)) GROUP BY time($__interval) fill(previous)
+SELECT last("prod")+last("imm") as "autoc" FROM (SELECT last("power") as "prod" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/0') AND $timeFilter GROUP BY time($__interval) fill(previous)),(SELECT last("power") as "imm" FROM "http" WHERE ("url" = 'http://192.168.1.202/emeter/1') AND ("power"<=0) AND $timeFilter GROUP BY time($__interval) fill(0)) GROUP BY time($__interval) fill(previous)
 ```
 - CONSUMO (con utiizzo subqueries)
 ```
