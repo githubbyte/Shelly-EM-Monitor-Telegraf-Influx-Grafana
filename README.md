@@ -74,7 +74,7 @@ Bene: queste risposte in formato Json sono quelle alla base del nostro monitorag
 
 Le risposte contengono:
 
-- Power: Potenza eletrica istantanea (W) positiva se è nel verso K-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
+- Power: Potenza elettrica istantanea (W) positiva se è nel verso K-->L, negativa se nel verso opposto. Quindi sempre >0 per la pinza produzione, mentre >0 in fase di prelievo e <0 in fase di immissione per la pinza scambio
 
 - reactive: potenza elettrica reattiva (var) non ha interesse immediato per noi
 
